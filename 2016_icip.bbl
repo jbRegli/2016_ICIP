@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{platt1999probabilistic}
+John Platt et~al.,
+\newblock ``Probabilistic outputs for support vector machines and comparisons
+  to regularized likelihood methods,''
+\newblock {\em Advances in large margin classifiers}, vol. 10, no. 3, pp.
+  61--74, 1999.
+
+\bibitem{jordan2002discriminative}
+A~Jordan,
+\newblock ``On discriminative vs. generative classifiers: A comparison of
+  logistic regression and naive bayes,''
+\newblock {\em Advances in neural information processing systems}, vol. 14, pp.
+  841, 2002.
+
+\end{thebibliography}

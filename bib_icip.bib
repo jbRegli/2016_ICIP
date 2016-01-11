@@ -1,0 +1,783 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== Intro:
+
+% KNN: low dimensional classification    
+@article{cover1967nearest,
+  title={Nearest neighbor pattern classification},
+  author={Cover, Thomas M and Hart, Peter E},
+  journal={Information Theory, IEEE Transactions on},
+  volume={13},
+  number={1},
+  pages={21--27},
+  year={1967},
+  publisher={IEEE}
+}
+
+% KNN: curse of dimensionality
+@incollection{beyer1999nearest,
+  title={When is “nearest neighbor” meaningful?},
+  author={Beyer, Kevin and Goldstein, Jonathan and Ramakrishnan, Raghu and Shaft, Uri},
+  booktitle={Database Theory—ICDT’99},
+  pages={217--235},
+  year={1999},
+  publisher={Springer}
+}
+
+% Manifold learning - 1:
+@article{lin2008riemannian,
+  title={Riemannian manifold learning},
+  author={Lin, Tong and Zha, Hongbin},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={30},
+  number={5},
+  pages={796--809},
+  year={2008},
+  publisher={IEEE}
+}
+
+% Manifold learning - 2 - Adaptive:
+@article{zhang2012adaptive,
+  title={Adaptive manifold learning},
+  author={Zhang, Zhenyue and Wang, Jing and Zha, Hongyuan},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={34},
+  number={2},
+  pages={253--265},
+  year={2012},
+  publisher={IEEE}
+}
+
+% Sparse dictionary learning:
+@article{kreutz2003dictionary,
+  title={Dictionary learning algorithms for sparse representation},
+  author={Kreutz-Delgado, Kenneth and Murray, Joseph F and Rao, Bhaskar D and Engan, Kjersti and Lee, Te-Won and Sejnowski, Terrence J},
+  journal={Neural computation},
+  volume={15},
+  number={2},
+  pages={349--396},
+  year={2003},
+  publisher={MIT Press}
+}
+
+% ST - Rotational invariance:
+@MISC{sifre2013rotation,
+  title = {Rotation, Scaling and Deformation Invariant Scattering for Texture Discrimination},
+  author = {L. Sifre and S. Mallat},
+  journal={Computer Vision and Pattern Recognition, IEEE Conference on},
+  pages={1233--1240},
+  year = {2013}
+  publisher={IEEE}
+}
+
+% ST - group invariant scattering:
+@article{mallat2012gis,
+  title={Group Invariant Scattering},
+  author={S. Mallat}, 
+  journal={Communications in Pure and Applied Mathematics},
+  volume={65},
+  number={10},
+  pages={1331--1398},
+  year={Oct. 2012}
+  publisher={Courant Institute of Mathematical Sciences, New York University}
+}
+
+% Fourier transform for classification:
+@article{baker2014using,
+  title={Using Fourier transform IR spectroscopy to analyze biological materials},
+  author={Baker, Matthew J and Trevisan, J{\'u}lio and Bassan, Paul and Bhargava, Rohit and Butler, Holly J and Dorling, Konrad M and Fielden, Peter R and Fogarty, Simon W and Fullwood, Nigel J and Heys, Kelly A and others},
+  journal={Nature protocols},
+  volume={9},
+  number={8},
+  pages={1771--1791},
+  year={2014},
+  publisher={Nature Publishing Group}
+}
+
+% Fourier translation stability: shift theorem
+@article{bracewell1965fourier,
+  title={The Fourier Transform and IIS Applications},
+  author={Bracewell, Ron},
+  journal={New York},
+  year={1965}
+}
+
+% A Fourier modulus representation $\Psi(x)=|\hat{x}| is not stable to deformation because high frequencies are severely distorted by  small deformations.
+@article{hormander1971fourier,
+  title={Fourier integral operators. I},
+  author={H{\"o}rmander, Lars},
+  journal={Acta mathematica},
+  volume={127},
+  number={1},
+  pages={79--183},
+  year={1971},
+  publisher={Springer}
+}
+
+% Wavelet: applications
+@inproceedings{de2000using,
+  title={Using wavelet coefficients for the classification of the electrocardiogram},
+  author={De Chazal, P and Celler, BG and Reilly, RB},
+  booktitle={Engineering in Medicine and Biology Society, 2000. Proceedings of the 22nd Annual International Conference of the IEEE},
+  volume={1},
+  pages={64--67},
+  year={2000},
+  organization={IEEE}
+}
+
+% Wavelet: stability to small deformation:
+@article{bruna2013invariant,
+  title={Invariant scattering convolution networks},
+  author={Bruna, Joan and Mallat, St{\'e}phane},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={35},
+  number={8},
+  pages={1872--1886},
+  year={2013},
+  publisher={IEEE}
+}
+
+% CNN: fondator:
+@article{lecun1995convolutional,
+  title={Convolutional networks for images, speech, and time series},
+  author={LeCun, Yann and Bengio, Yoshua},
+  journal={The handbook of brain theory and neural networks},
+  volume={3361},
+  number={10},
+  year={1995}
+}
+
+% CNN: learning
+@inproceedings{simard2003best,
+  title={Best practices for convolutional neural networks applied to visual document analysis},
+  author={Simard, Patrice Y and Steinkraus, Dave and Platt, John C},
+  booktitle={null},
+  pages={958},
+  year={2003},
+  organization={IEEE}
+}
+
+
+
+% CNN Cifar and Mnist
+@article{hinton2012improving,
+  title={Improving neural networks by preventing co-adaptation of feature detectors},
+  author={Hinton, Geoffrey E and Srivastava, Nitish and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan R},
+  journal={arXiv preprint arXiv:1207.0580},
+  year={2012}
+}
+
+
+% CNN: Imagenet 
+@inproceedings{krizhevsky2012imagenet,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle={Advances in neural information processing systems},
+  pages={1097--1105},
+  year={2012}
+}
+
+% CNN: Timit (speech processing)
+@inproceedings{abdel2012applying,
+  title={Applying convolutional neural networks concepts to hybrid NN-HMM model for speech recognition},
+  author={Abdel-Hamid, Ossama and Mohamed, Abdel-rahman and Jiang, Hui and Penn, Gerald},
+  booktitle={Acoustics, Speech and Signal Processing (ICASSP), 2012 IEEE International Conference on},
+  pages={4277--4280},
+  year={2012},
+  organization={IEEE}
+}
+
+% CNN: Intriguing pties
+@article{szegedy2013intriguing,
+  title={Intriguing properties of neural networks},
+  author={Szegedy, Christian and Zaremba, Wojciech and Sutskever, Ilya and Bruna, Joan and Erhan, Dumitru and Goodfellow, Ian and Fergus, Rob},
+  journal={arXiv preprint arXiv:1312.6199},
+  year={2013}
+}
+
+% Generative vs disc 1:
+@inproceedings{ulusoy2005generative,
+  title={Generative versus discriminative methods for object recognition},
+  author={Ulusoy, Ilkay and Bishop, Christopher M},
+  booktitle={Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on},
+  volume={2},
+  pages={258--265},
+  year={2005},
+  organization={IEEE}
+}
+
+% Generative vs disc 2:
+@article{jordan2002discriminative,
+  title={On discriminative vs. generative classifiers: A comparison of logistic regression and naive bayes},
+  author={Jordan, A},
+  journal={Advances in neural information processing systems},
+  volume={14},
+  pages={841},
+  year={2002}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== Scattering transform:
+
+% Wavelet: localized waveform
+@book{mallat1999wavelet,
+  title={A wavelet tour of signal processing},
+  author={Mallat, St{\'e}phane},
+  year={1999},
+  publisher={Academic press}
+}
+
+% Wavelet: commute with non linear operator
+@report{bruna2012commute,
+  title={Operators commuting with diffeomorphisms},
+  author={J. Bruna},
+  year={2012}
+  publisher={CMAP Tech. Report, Ecole Polytechnique}
+}
+
+% Wavelet and invertibility
+@article{waldspurger2015phase,
+  title={Phase recovery, maxcut and complex semidefinite programming},
+  author={Waldspurger, Ir{\`e}ne and d’Aspremont, Alexandre and Mallat, St{\'e}phane},
+  journal={Mathematical Programming},
+  volume={149},
+  number={1-2},
+  pages={47--81},
+  year={2015},
+  publisher={Springer}
+}
+
+% CNN and applications
+@inproceedings{lecun2010convolutional,
+  title={Convolutional networks and applications in vision},
+  author={LeCun, Yann and Kavukcuoglu, Koray and Farabet, Cl{\'e}ment},
+  booktitle={Circuits and Systems (ISCAS), Proceedings of 2010 IEEE International Symposium on},
+  pages={253--256},
+  year={2010},
+  organization={IEEE}
+}
+
+% ST: non-expansive
+@article{lohmiller1998contraction,
+  title={On contraction analysis for non-linear systems},
+  author={Lohmiller, Winfried and Slotine, Jean-Jacques E},
+  journal={Automatica},
+  volume={34},
+  number={6},
+  pages={683--696},
+  year={1998},
+  publisher={Elsevier}
+}
+
+% ST: best order 1
+@inproceedings{anden2011multiscale,
+  title={Multiscale Scattering for Audio Classification.},
+  author={And{\'e}n, Joakim and Mallat, St{\'e}phane},
+  booktitle={ISMIR},
+  pages={657--662},
+  year={2011}
+}
+
+% ST: best order 2
+@article{bruna2010classification,
+  title={Classification with scattering operators},
+  author={Bruna, Joan and Mallat, St{\'e}phane},
+  journal={arXiv preprint arXiv:1011.3023},
+  year={2010}
+}
+
+% ST: displacement field estimator - applications
+@inproceedings{brailean1996recursive,
+  title={Recursive map displacement field estimation and its applications},
+  author={Brailean, James C and Katsaggelos, Aggelos K},
+  booktitle={Image Processing, 1996. Proceedings., International Conference on},
+  volume={1},
+  pages={917--920},
+  year={1996},
+  organization={IEEE}
+}
+
+% ST: audio clf
+@inproceedings{anden2011multiscale,
+  title={Multiscale Scattering for Audio Classification.},
+  author={And{\'e}n, Joakim and Mallat, St{\'e}phane},
+  booktitle={ISMIR},
+  pages={657--662},
+  year={2011}
+}
+
+% ST: images clf
+@article{oyallon2014deep,
+  title={Deep roto-translation scattering for object classification},
+  author={Oyallon, Edouard and Mallat, St{\'e}phane},
+  journal={arXiv preprint arXiv:1412.8659},
+  year={2014}
+}
+
+% ST: electrocardiograms clf
+@inproceedings{chudacek2014low,
+  title={Low dimensional manifold embedding for scattering coefficients of intrapartum fetale heart rate variability},
+  author={Chudacek, Vaclav and Talmon, Ronen and Anden, J and Mallat, S and Coifman, RR and Abry, Patrice and Doret, M},
+  booktitle={Engineering in Medicine and Biology Society (EMBC), 2014 36th Annual International Conference of the IEEE},
+  pages={6373--6376},
+  year={2014},
+  organization={IEEE}
+}
+
+
+
+% ST: comparison with CNN
+@article{oyallon2013generic,
+  title={Generic deep networks with wavelet scattering},
+  author={Oyallon, Edouard and Mallat, St{\'e}phane and Sifre, Laurent},
+  journal={arXiv preprint arXiv:1312.5940},
+  year={2013}
+}
+
+
+% ST: SVM
+@article{scholkopf1997comparing,
+  title={Comparing support vector machines with Gaussian kernels to radial basis function classifiers},
+  author={Sch{\"o}lkopf, Bernhard and Sung, Kah-Kay and Burges, Chris JC and Girosi, Federico and Niyogi, Partha and Poggio, Tomaso and Vapnik, Vladimir},
+  journal={Signal Processing, IEEE Transactions on},
+  volume={45},
+  number={11},
+  pages={2758--2765},
+  year={1997},
+  publisher={IEEE}
+}
+
+% ST: CNN Mnist
+@inproceedings{jarrett2009best,
+  title={What is the best multi-stage architecture for object recognition?},
+  author={Jarrett, Kevin and Kavukcuoglu, Koray and Ranzato, Marc'Aurelio and LeCun, Yann},
+  booktitle={Computer Vision, 2009 IEEE 12th International Conference on},
+  pages={2146--2153},
+  year={2009},
+  organization={IEEE}
+}
+
+% ST: Lecun website 
+@ONLINE{lecun2015web,
+	title = {Personal webpage: State of the art on MNIST},
+	author = {LeCun, Yann},
+	year={2015},
+	howpublished = "\url{http://yann.lecun.com/exdb/mnist/}",
+	note = {Accessed: 04-11-2015}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== PGMs:
+
+% Tuto BN:
+@book{heckerman1998tutorial,
+  title={A tutorial on learning with Bayesian networks},
+  author={Heckerman, David},
+  year={1998},
+  publisher={Springer}
+}
+
+
+% Bishop:
+@book{bishop2006pattern,
+  title={Pattern recognition and machine learning},
+  chapter={8},
+  pages={359--422},
+  author={Bishop, Christopher M},
+  year={2006},
+  publisher={springer}
+}
+
+% BN - conditional indep:
+@book{nilsson1998artificial,
+  title={Artificial intelligence: a new synthesis},
+  author={Nilsson, Nils J},
+  year={1998},
+  publisher={Morgan Kaufmann}
+}
+
+% BN - application:
+@inproceedings{rish2002efficient,
+  title={Efficient fault diagnosis using probing},
+  author={Rish, Irina and Brodie, Mark and Ma, Sheng},
+  booktitle={AAAI Spring Symposium on Information Refinement and Revision for Decision Making},
+  year={2002}
+}
+
+
+% BN - Boltzmann machine:
+@article{ackley1985learning,
+  title={A learning algorithm for boltzmann machines*},
+  author={Ackley, David H and Hinton, Geoffrey E and Sejnowski, Terrence J},
+  journal={Cognitive science},
+  volume={9},
+  number={1},
+  pages={147--169},
+  year={1985},
+  publisher={Wiley Online Library}
+}
+
+% BN - RBM:
+@article{smolensky1986information,
+  title={Information processing in dynamical systems: Foundations of harmony theory},
+  author={Smolensky, Paul},
+  year={1986},
+  publisher={Department of Computer Science, University of Colorado, Boulder}
+}
+
+% BN - architecture from data:
+@phdthesis{margaritis2003learning,
+  title={Learning Bayesian network model structure from data},
+  author={Margaritis, Dimitris},
+  year={2003},
+  school={US Army}
+}
+
+% Markov Chain:
+@book{kemeny1960finite,
+  title={Finite markov chains},
+  author={Kemeny, John G and Snell, James Laurie},
+  volume={356},
+  year={1960},
+  publisher={van Nostrand Princeton, NJ}
+}
+
+% Brownian motion - finance:
+@article{duncan2000stochastic,
+  title={Stochastic calculus for fractional Brownian motion I. Theory},
+  author={Duncan, Tyrone E and Hu, Yaozhong and Pasik-Duncan, Bozenna},
+  journal={SIAM Journal on Control and Optimization},
+  volume={38},
+  number={2},
+  pages={582--612},
+  year={2000},
+  publisher={SIAM}
+}
+
+% Page rank:
+@article{haveliwala2003second,
+  title={The second eigenvalue of the Google matrix},
+  author={Haveliwala, Taher and Kamvar, Sepandar},
+  journal={Stanford University Technical Report},
+  year={2003},
+  publisher={Stanford}
+}
+
+
+% MCMC:
+@book{gilks2005markov,
+  title={Markov chain monte carlo},
+  author={Gilks, Walter R},
+  year={2005},
+  publisher={Wiley Online Library}
+}
+
+
+
+% HMM - viterbi:
+@article{viterbi1967error,
+  title={Error bounds for convolutional codes and an asymptotically optimum decoding algorithm},
+  author={Viterbi, Andrew J},
+  journal={Information Theory, IEEE Transactions on},
+  volume={13},
+  number={2},
+  pages={260--269},
+  year={1967},
+  publisher={IEEE}
+}
+
+
+% HMM - viterbi 2:
+@article{forney1973viterbi,
+  title={The viterbi algorithm},
+  author={Forney Jr, G David},
+  journal={Proceedings of the IEEE},
+  volume={61},
+  number={3},
+  pages={268--278},
+  year={1973},
+  publisher={IEEE}
+}
+
+% HMM - EM - proof of cv 1
+@article{baum1970maximization,
+  title={A maximization technique occurring in the statistical analysis of probabilistic functions of Markov chains},
+  author={Baum, Leonard E and Petrie, Ted and Soules, George and Weiss, Norman},
+  journal={The annals of mathematical statistics},
+  pages={164--171},
+  year={1970},
+  publisher={JSTOR}
+}
+
+% HMM - EM - proof of cv 2
+@article{dempster1977maximum,
+  title={Maximum likelihood from incomplete data via the EM algorithm},
+  author={Dempster, Arthur P and Laird, Nan M and Rubin, Donald B},
+  journal={Journal of the royal statistical society. Series B (methodological)},
+  pages={1--38},
+  year={1977},
+  publisher={JSTOR}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== SHMT:
+
+% SVM: probabilistic output
+@article{platt1999probabilistic,
+  title={Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods},
+  author={Platt, John and others},
+  journal={Advances in large margin classifiers},
+  volume={10},
+  number={3},
+  pages={61--74},
+  year={1999},
+  publisher={Cambridge, MA}
+}
+
+% Wavelet: gaussian direct correlation
+@inproceedings{lee1996new,
+  title={New method of linear time-frequency analysis for signal detection},
+  author={Lee, N and Huynh, Q and Schwartz, S},
+  booktitle={Time-Frequency and Time-Scale Analysis, 1996., Proceedings of the IEEE-SP International Symposium on},
+  pages={13--16},
+  year={1996},
+  organization={IEEE}
+}
+
+% HMT - crouse
+@article{crouse1998wavelet,
+  title={Wavelet-based statistical signal processing using hidden Markov models},
+  author={Crouse, Matthew S and Nowak, Robert D and Baraniuk, Richard G},
+  journal={Signal Processing, IEEE Transactions on},
+  volume={46},
+  number={4},
+  pages={886--902},
+  year={1998},
+  publisher={IEEE}
+}
+
+% HMT - kingsbury
+@article{kingsbury2001complex,
+  title={Complex wavelets for shift invariant analysis and filtering of signals},
+  author={Kingsbury, Nick},
+  journal={Applied and computational harmonic analysis},
+  volume={10},
+  number={3},
+  pages={234--253},
+  year={2001},
+  publisher={Elsevier}
+}
+
+% HMT - Underflowing - 1:
+@article{devijver1985baum,
+  title={Baum's forward-backward algorithm revisited},
+  author={Devijver, Pierre A},
+  journal={Pattern Recognition Letters},
+  volume={3},
+  number={6},
+  pages={369--373},
+  year={1985},
+  publisher={Elsevier}
+}
+
+% HMT - Durand
+@article{durand2004computational,
+  title={Computational methods for hidden Markov tree models-An application to wavelet trees},
+  author={Durand, Jean-Baptiste and Goncalves, Paulo and Gu{\'e}don, Yann},
+  journal={Signal Processing, IEEE Transactions on},
+  volume={52},
+  number={9},
+  pages={2551--2560},
+  year={2004},
+  publisher={IEEE}
+}
+
+% Sparisty def 1:
+@article{donoho1993unconditional,
+  title={Unconditional bases are optimal bases for data compression and for statistical estimation},
+  author={Donoho, David L},
+  journal={Applied and computational harmonic analysis},
+  volume={1},
+  number={1},
+  pages={100--115},
+  year={1993},
+  publisher={Elsevier}
+}
+
+% Sparisty def 2:
+@article{devore1992image,
+  title={Image compression through wavelet transform coding},
+  author={DeVore, Ronald A and Jawerth, Bj{\"o}rn and Lucier, Bradley J},
+  journal={Information Theory, IEEE Transactions on},
+  volume={38},
+  number={2},
+  pages={719--746},
+  year={1992},
+  publisher={IEEE}
+}
+
+% HMT - Underflowing - 2:
+@article{ephraim2002hidden,
+  title={Hidden markov processes},
+  author={Ephraim, Yariv and Merhav, Neri},
+  journal={Information Theory, IEEE Transactions on},
+  volume={48},
+  number={6},
+  pages={1518--1569},
+  year={2002},
+  publisher={IEEE}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== Experiments:
+
+% Ripple removal:
+@inproceedings{nelson2010fractal,
+  title={Fractal dimension based sand ripple suppression for mine hunting with sidescan sonar},
+  author={Nelson, JDB and Kingsbury, NG},
+  booktitle={International conference on synthetic aperture sonar and synthetic aperture radar},
+  year={2010}
+}
+
+% DSTL website UDRC
+@ONLINE{udrc2015sonar,
+	title = {DSTL datasets},
+	author = {Dstl},
+	year={2009},
+	howpublished = "\url{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/326061/DefenceReporter_Winter2009.pdf}",
+	note = {Accessed: 04-11-2015}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% =========== Conclusion:
+
+% ccl - invertible SCN
+@article{cheng2015deep,
+  title={Deep Haar Scattering Networks},
+  author={Cheng, Xiuyuan and Chen, Xu and Mallat, Stephane},
+  journal={arXiv preprint arXiv:1509.09187},
+  year={2015}
+}
+
+% ccl - variational bayes - 1:
+@article{attias2000variational,
+  title={A variational Bayesian framework for graphical models},
+  author={Attias, Hagai},
+  journal={Advances in neural information processing systems},
+  volume={12},
+  number={1-2},
+  pages={209--215},
+  year={2000}
+}
+
+% ccl - variational bayes - 2:
+@article{wainwright2008graphical,
+  title={Graphical models, exponential families, and variational inference},
+  author={Wainwright, Martin J and Jordan, Michael I},
+  journal={Foundations and Trends{\textregistered} in Machine Learning},
+  volume={1},
+  number={1-2},
+  pages={1--305},
+  year={2008},
+  publisher={Now Publishers Inc.}
+}
+
+% ccl - VB HMT - 1:
+@article{dasgupta2006texture,
+  title={Texture analysis with variational hidden Markov trees},
+  author={Dasgupta, Nilanjan and Carin, Lawrence},
+  journal={IEEE transactions on signal processing},
+  volume={54},
+  number={6},
+  pages={2352--2356},
+  year={2006},
+  publisher={Institute of Electrical and Electronics Engineers}
+}
+
+% ccl - VB HMT - 2:
+@article{olariu2009modified,
+  title={Modified variational Bayes EM estimation of hidden Markov tree model of cell lineages},
+  author={Olariu, Victor and Coca, Daniel and Billings, Stephen A and Tonge, Peter and Gokhale, Paul and Andrews, Peter W and Kadirkamanathan, Visakan},
+  journal={Bioinformatics},
+  volume={25},
+  number={21},
+  pages={2824--2830},
+  year={2009},
+  publisher={Oxford Univ Press}
+}
+
+% ccl - SVB:
+@article{hoffman2013stochastic,
+  title={Stochastic variational inference},
+  author={Hoffman, Matthew D and Blei, David M and Wang, Chong and Paisley, John},
+  journal={The Journal of Machine Learning Research},
+  volume={14},
+  number={1},
+  pages={1303--1347},
+  year={2013},
+  publisher={JMLR. org}
+}
+
+% ccl - SVB HMM:
+@incollection{NIPS2014_5560,
+title = {Stochastic variational inference for hidden Markov models},
+author = {Foti, Nicholas and Xu, Jason and Laird, Dillon and Fox, Emily},
+booktitle = {Advances in Neural Information Processing Systems 27},
+editor = {Z. Ghahramani and M. Welling and C. Cortes and N.D. Lawrence and K.Q. Weinberger},
+pages = {3599--3607},
+year = {2014},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/5560-stochastic-variational-inference-for-hidden-markov-models.pdf}
+}
+
+% ccl - Hierarchical models:
+@article{ranganath2015hierarchical,
+  title={Hierarchical Variational Models},
+  author={Ranganath, Rajesh and Tran, Dustin and Blei, David M},
+  journal={arXiv preprint arXiv:1511.02386},
+  year={2015}
+}
+
+
+
+% ccl - Hierarchical HMM:
+@article{fine1998hierarchical,
+  title={The hierarchical hidden Markov model: Analysis and applications},
+  author={Fine, Shai and Singer, Yoram and Tishby, Naftali},
+  journal={Machine learning},
+  volume={32},
+  number={1},
+  pages={41--62},
+  year={1998},
+  publisher={Springer}
+}
+
+% ccl - PBP
+@article{hernandez2015probabilistic,
+  title={Probabilistic Backpropagation for Scalable Learning of Bayesian Neural Networks},
+  author={Hern{\'a}ndez-Lobato, Jos{\'e} Miguel and Adams, Ryan P},
+  journal={arXiv preprint arXiv:1502.05336},
+  year={2015}
+}
+
+% ccl - weight uncertainty in NN:
+@article{blundell2015weight,
+  title={Weight Uncertainty in Neural Networks},
+  author={Blundell, Charles and Cornebise, Julien and Kavukcuoglu, Koray and Wierstra, Daan},
+  journal={arXiv preprint arXiv:1505.05424},
+  year={2015}
+}
+
+
+
