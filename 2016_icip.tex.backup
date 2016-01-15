@@ -32,21 +32,21 @@
 % For example:
 % ------------
 %\address{School\\
-%	Department\\
-%	Address}
+%  Department\\
+%  Address}
 %
 % Two addresses (uncomment and modify for two-address case).
 % ----------------------------------------------------------
 %\twoauthors
 %  {A. Author-one, B. Author-two\sthanks{Thanks to XYZ agency for funding.}}
-%	{School A-B\\
-%	Department A-B\\
-%	Address A-B}
+%  {School A-B\\
+%  Department A-B\\
+%  Address A-B}
 %  {C. Author-three, D. Author-four\sthanks{The fourth author performed the work
-%	while at ...}}
-%	{School C-D\\
-%	Department C-D\\
-%	Address C-D}
+%  while at ...}}
+%  {School C-D\\
+%  Department C-D\\
+%  Address C-D}
 %
 \begin{document}
 %\ninept
@@ -54,13 +54,13 @@
 \maketitle
 %
 \begin{abstract}
-	A Scattering convolutional hidden Markov tree proposes a new inference mechanism for high-dimensional signals by combining the interesting signal representation created by the scattering transform to a powerful probabilistic graphical model.
-	A wavelet scattering network computes a signal translation invariant and stable to deformations representation that still preserves the informative content of the signal. Such properties are acquired by cascading wavelet transform convolutions with non-linear modulus and averaging operators.
-	The network's structure and its distributions are described using a Hidden Markov Tree. This yield a generative model for high-dimensional inference. It offers a mean for performing several inference tasks among which are predictions. The scattering convolutional hidden Markov tree displays promising results on both classification and segmentation tasks of complex images.
+  A Scattering convolutional hidden Markov tree proposes a new inference mechanism for high-dimensional signals by combining the interesting signal representation created by the scattering transform to a powerful probabilistic graphical model.
+  A wavelet scattering network computes a signal translation invariant and stable to deformations representation that still preserves the informative content of the signal. Such properties are acquired by cascading wavelet transform convolutions with non-linear modulus and averaging operators.
+  The network's structure and its distributions are described using a Hidden Markov Tree. This yield a generative model for high-dimensional inference. It offers a mean for performing several inference tasks among which are predictions. The scattering convolutional hidden Markov tree displays promising results on both classification and segmentation tasks of complex images.
 \end{abstract}
 %
 \begin{keywords}
-	Scattering network, Hidden Markov Model, Classification, Deep network
+  Scattering network, Hidden Markov Model, Classification, Deep network
 \end{keywords}
 %
 \section{Introduction}
@@ -68,13 +68,13 @@
 
   The standard approach to classify high dimensional signals can be expressed as a two step procedure. First the data are projected in a feature space where the task at hand is simplified. Then prediction is done using a simple predictor in this new representational space. The mapping can either be hand-built ---\eg Fourier transform, wavelet transform--- or learned. In the last decade methods for learning the projection have drastically improved under the impulsion of the so called deep learning. Deep neural networks (sometime enriched by convolutional architecture) have been able to learn very effective representations for a given dataset and a given task~\cite{DNN, CNN}. Such method have achieved state of the art on many standard problems~\cite{alexNet} as well as real world applications~\cite{microsoft cortana}. 
   
-  Training those deep networks require an important number of training examples to be effective~\cite{training example in DNN}.  Mallat recently proposed an hand-build   
+  Training those deep networks require an important number of training examples to be effective~\cite{training example in DNN}. Using    
   ~\cite{one shot learning }
-		
+    
   We proposes a method combining a recently proposed deterministic analytically tractable transformation inspired by deep convolutional to a probabilistic graphical model in order to create a powerful probabilistic tool to handle high dimensional prediction problems. In a similar fashion to the work done by Crouse on wavelet trees~\citep{crouse1998wavelet}, we propose to describe Mallat's scattering convolutional scattering transform~\citep{bruna2010classification} using a hidden Markov tree. Doing so we develop a new framework to model high-dimensional inputs. As opposed to the commonly used simple classification method, once trained our model can tackle prediction problems but also other inference tasks ---\eg generation, sensitivity analysis... %TODO: change to highlight low number of training example properties
 
   In  Section~\ref{sec:Background}  we  present  the  requisite  background  of high dimensional signal classification. Section~\ref{sec:SCN} introduces the Scattering Transform and some of its properties.   We  fuse these to an hidden Markov Tree concepts in Section~\ref{sec:SCHMT}, propose our Scattering Hidden Markov Tree (SCHMT), and describe the inferential machinery. In Section~\ref{sec:Experiments} we perform classification on a selection of standard datasets. We draw conclusions in Section~\ref{sec:Conclusion}
-	
+  
 \section{Background}
   \label{sec:Background}
   Insist on the lot of training example needed for DL. Present ST has an alternative to lower the number of samples required.
@@ -91,7 +91,7 @@
 
 %   Scattering convolutional networks (SCNs)~\cite{bruna} has the same general architecture as Convolutional Neural Networks (CNNs)~\citet{lecun1995convolutional}. They both cascade a convolution step and a ``pooling'' non linearity but CNNs use kernel filters learned from the data, while SCNs rely a fixed wavelet filter bank~\cite{mallat}. The wavelet bank can then be designed to extract image features having the desired invariant~\cite{work translation invariant, work rotation invariant, work rigid motion}. For image classification tasks, one is interested in producing descriptors that are ---at least--- stable to deformations and invariant to translation. Note that more while more complex SCNs exist, on the remainder of this paper we focus on descriptors with the previously mentioned properties.
 
-		Scattering convolutional networks (SCNs)~\cite{bruna} are Convolutional Neural Networks (CNNs)~\citet{lecun1995convolutional} using a fixed filter bank of wavelets. Those filters can hand-crafted to yield descriptors with the desired invariances~\cite{work translation invariant, work rotation invariant, work rigid motion}. For image classification tasks, one is interested in descriptors that are ---at least--- stable to deformations and invariant to translations. Note that SCNs producing more complexes set of invariances exist but on the remainder of this paper we consider only on descriptors with the previously mentioned properties.
+    Scattering convolutional networks (SCNs)~\cite{bruna} are Convolutional Neural Networks (CNNs)~\citet{lecun1995convolutional} using a fixed filter bank of wavelets. Those filters can hand-crafted to yield descriptors with the desired invariances~\cite{work translation invariant, work rotation invariant, work rigid motion}. For image classification tasks, one is interested in descriptors that are ---at least--- stable to deformations and invariant to translations. Note that SCNs producing more complexes set of invariances exist but on the remainder of this paper we consider only on descriptors with the previously mentioned properties.
   
   \subsection{Scattering transform}
     \label{subsec:SCN/ST}
@@ -128,7 +128,7 @@
     \vspace{-5pt}
     \begin{equation}
       \mcalU_{J} \bfx = \{ S[\emptyset] \bfx ; U[\lambda]\bfx \}_{\lambda \in \Lambda_{J}} 
-		      = \{ \bfx \ast \phi_{J}; \abs{\bfx \ast \psi_{\lambda}} \}_{\lambda \in \Lambda_{J}},
+          = \{ \bfx \ast \phi_{J}; \abs{\bfx \ast \psi_{\lambda}} \}_{\lambda \in \Lambda_{J}},
       \label{eq:One step propagator}
     \end{equation}
     
@@ -136,10 +136,10 @@
     
     \begin{figure}
       \begin{center}
-				\includegraphics[width=3.3in, height=2in, keepaspectratio]{ST_freqDec_crop.pdf}
-				\caption[Scattering convolution network.]{\centering  Scattering networks can be seen as neural networks iterating over wavelet  modulus  operators $\mcalU_{j}$. Each layer $m$ outputs the averaged  invariants $S[p_{m}]\bfx$ and covariant coefficients $U[p_{m+1}]\bfx$.}
-				\label{fig:SCN 1}
-				% TODO: Change it for something similar to Siffre rigid motion
+        \includegraphics[width=3.3in, height=2in, keepaspectratio]{ST_freqDec_crop.pdf}
+        \caption[Scattering convolution network.]{\centering  Scattering networks can be seen as neural networks iterating over wavelet  modulus  operators $\mcalU_{j}$. Each layer $m$ outputs the averaged  invariants $S[p_{m}]\bfx$ and covariant coefficients $U[p_{m+1}]\bfx$.}
+        \label{fig:SCN 1}
+        % TODO: Change it for something similar to Siffre rigid motion
       \end{center}
       \vspace{-15pt}
     \end{figure}
@@ -151,12 +151,12 @@
     Hence for a given set of parameter $(\psi, M,J,L)$, let $ST_{(\psi, M,J,L)}(\bfx)$ denotes the unique frequency decreasing windowed scattering convolutional network with those parameters evaluated for signal $\bfx$. Each node $i$ of this network generates a -possibly empty- set of of nodes of size $(j_{i}-1) \times L$ where $j_{i}$ is the scale of node $i$ and $L$ is the number of orientations considered and it has the architecture displayed by Figure~\ref{fig:SCN 2}.
 
     \begin{figure}
-			\begin{center}
-				\includegraphics[width=3.3in, height=2in, keepaspectratio]{ST_freqDec_crop.pdf}
-				\caption[Frequency decreasing scattering convolution network.]{\centering  Frequency decreasing scattering convolution network 	with $J=4$, $L=1$ and $M=2$. A node $i$ at scale $j_{i}$ generates $(j_{i}-1) \times L$ nodes. }
-				\label{fig:SCN 2}
-				% TODO: Narrow the gaps
-			\end{center}
+      \begin{center}
+        \includegraphics[width=3.3in, height=2in, keepaspectratio]{ST_freqDec_crop.pdf}
+        \caption[Frequency decreasing scattering convolution network.]{\centering  Frequency decreasing scattering convolution network with $J=4$, $L=1$ and $M=2$. A node $i$ at scale $j_{i}$ generates $(j_{i}-1) \times L$ nodes. }
+        \label{fig:SCN 2}
+        % TODO: Narrow the gaps
+      \end{center}
       \vspace{-15pt}
     \end{figure}
 
@@ -187,11 +187,11 @@
 
     \begin{figure}
       \begin{center}
-				\includegraphics[width=3.3in, height=2in, keepaspectratio]{scat_HMT_crop.pdf}
-				\caption{Scattering convolutional hidden Markov tree.}
-				\label{fig:SCHMT 1}
-				% TODO: Narrow the gaps
-						\end{center}
+        \includegraphics[width=3.3in, height=2in, keepaspectratio]{scat_HMT_crop.pdf}
+        \caption{Scattering convolutional hidden Markov tree.}
+        \label{fig:SCHMT 1}
+        % TODO: Narrow the gaps
+      \end{center}
     \end{figure}
 
     This model implies to do two assumptions on the scattering transform. First one need to assume --- $K$-populations--- that a signal’s scattering coefficients can be described by K clusters. This is a common assumptions for standard wavelets~\citep{kingsbury2001complex} and hence it can be extended to the scattering transform. The SCHMT also assumed ---persistence--- that the informative character of a coefficients is propagated across layers. This assumption is sound since ...
@@ -204,69 +204,69 @@
     
     \begin{center}
       \begin{algorithm}
-% 		 		\textbf{Meta-parameters:}\\
-% 				$K$\\
-				\tcp{Initialization:}
-% 				\tcp{$P_{\theta_{k,i}}(s_{i})$:}
-				\For{All the nodes $i$ of the tree $\mcalT$}{ 
-					$P_{\theta_{k,i}}(s_{i}) = \mcalN(s_{i} | \mu_{k,i},\sigma_{k,i})$
-				}
-% 				\tcp{Loop over the leaves $i$ of the tree:}
-				\For{All the leaves $i$ of the tree $\mcalT$}{
-					$\beta_{i}(k) = \frac{P_{\theta_{k,i}}(s_{i}) P(H_{i}=k)}{\sum_{g=1}^{K} P_{\theta_{g,i}}(s_{i}) P(H_{i}=g)}$\\
-					$\beta_{i,\rho(i)}(k) = \sum_{g=1}^{K}\frac{\beta_{i}(g) \epsilon_{i}^{(kg)}}{P(H_{i}=g)} . P(H_{\rho(i)}=k)$ \\
-					$l_{i} = 0$
-				}
-				\tcp{Induction:}
-% 				\tcp{Bottom-Up loop over the nodes of the tree:}
-				\For{All non-leaf nodes $i$ of the tree $\mcalT$ (Bottom-up)}{
-					$M_{i} = \sum_{k=1}^{K} P_{\theta_{k,i}}(s_{i}) \prod_{j \in c(i)} \frac{\beta_{j,i}(k)}{P(H_{i}=k)^{n_{i}-1}}$ \\
-					$l_{i} = \log(M_{i}) + \sum_{j \in c(i)}l_{j}$\\
-					$\beta_{i}(k) = \frac{P_{\theta_{k,i}(s_{i})} \prod_{j \in c(i)}(\beta_{j,i}(k))}{P(H_{i}=k) ^{n_{i}-1} M_{i}} $\\
-					\For{All the children nodes $j$ of node $i$}{
-						$\beta_{i\backslash c(i)}(k) = \frac{\beta_{i}(k)}{\beta_{i,j}(k)}$
-					}
-					$\beta_{i,\rho(i)}(k) = \sum_{g=1}^{K} \frac{\beta_{i}(g) \epsilon_{i}^{(kg)}}{P(H_{i}=g)} .P(H_{\rho(i)}=k)$
-				}
-				\caption{Smoothed upward algorithm.}
-				\label{algo:Smoothed upward}		
+%          \textbf{Meta-parameters:}\\
+%         $K$\\
+        \tcp{Initialization:}
+%         \tcp{$P_{\theta_{k,i}}(s_{i})$:}
+        \For{All the nodes $i$ of the tree $\mcalT$}{ 
+          $P_{\theta_{k,i}}(s_{i}) = \mcalN(s_{i} | \mu_{k,i},\sigma_{k,i})$
+        }
+%         \tcp{Loop over the leaves $i$ of the tree:}
+        \For{All the leaves $i$ of the tree $\mcalT$}{
+          $\beta_{i}(k) = \frac{P_{\theta_{k,i}}(s_{i}) P(H_{i}=k)}{\sum_{g=1}^{K} P_{\theta_{g,i}}(s_{i}) P(H_{i}=g)}$\\
+          $\beta_{i,\rho(i)}(k) = \sum_{g=1}^{K}\frac{\beta_{i}(g) \epsilon_{i}^{(kg)}}{P(H_{i}=g)} . P(H_{\rho(i)}=k)$ \\
+          $l_{i} = 0$
+        }
+        \tcp{Induction:}
+%         \tcp{Bottom-Up loop over the nodes of the tree:}
+        \For{All non-leaf nodes $i$ of the tree $\mcalT$ (Bottom-up)}{
+          $M_{i} = \sum_{k=1}^{K} P_{\theta_{k,i}}(s_{i}) \prod_{j \in c(i)} \frac{\beta_{j,i}(k)}{P(H_{i}=k)^{n_{i}-1}}$ \\
+          $l_{i} = \log(M_{i}) + \sum_{j \in c(i)}l_{j}$\\
+          $\beta_{i}(k) = \frac{P_{\theta_{k,i}(s_{i})} \prod_{j \in c(i)}(\beta_{j,i}(k))}{P(H_{i}=k) ^{n_{i}-1} M_{i}} $\\
+          \For{All the children nodes $j$ of node $i$}{
+            $\beta_{i\backslash c(i)}(k) = \frac{\beta_{i}(k)}{\beta_{i,j}(k)}$
+          }
+          $\beta_{i,\rho(i)}(k) = \sum_{g=1}^{K} \frac{\beta_{i}(g) \epsilon_{i}^{(kg)}}{P(H_{i}=g)} .P(H_{\rho(i)}=k)$
+        }
+        \caption{Smoothed upward algorithm.}
+        \label{algo:Smoothed upward}    
       \end{algorithm}        
     \end{center}
 %    
     \begin{center}
       \begin{algorithm}
-% 				\textbf{Meta-parameters:}\\
-% 				$K$\\
-				\tcp{Initialization:}
-				$\alpha_{0}(k) = 1$\\
-				\tcp{Induction:}
-% 				\tcp{Top-Down loop over the nodes of the tree:}
-				\For{All nodes $i$ of the tree $\mcalT\backslash\{0\}$ (Top-Down)}{
-					$\alpha_{i}(k) = \frac{1}{P(H_{i}=k)} \sum_{g=1}^{K} \alpha_{\rho(i)}(g) \epsilon_{i}^{(gk)} \beta_{\rho(i)\backslash i}(g) P(H_{\rho(i)}=g)$
-				}
-				\caption{Smoothed downward algorithm.}
-				\label{algo:Smoothed downward}		
-			\end{algorithm}        
-		\end{center}
-		%
-		\begin{center}
-			\begin{algorithm}
-% 				\textbf{Meta-parameters:}\\
-% 				$K$,\\
-% 				Distribution family for $P_{\theta}$ \tcp*{Here Gaussian}
-% 				$N$ \tcp*{Number of observed realizations of the signal}
-				\tcp{Initialization:}
-				$\pi_{0}(k) = \frac{1}{N} \sum_{n=1}^{N} P(H_{0}^{n}=m|s_{0}^{n},\Theta^{l})$\\
-				\tcp{Induction:}
-% 				\tcp{Loop over the nodes of the tree:}
-				\For{All nodes $i$ of the tree $\mcalT\backslash\{0\}$}{
-					$P(H_{i}=k) = \frac{1}{N} \sum_{n=1}^{N} P(H_{i}^{n}=k|\bar{s}_{0}^{n},\Theta^{l})$,\\
-					$\epsilon_{i}^{gk} = \frac{\sum_{n=1}^{N} P(H_{i}^{n} = k, H_{\rho(i)}^{n}=g |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{\rho(i)}=k)}$,\\
-					$\mu_{k,i} = \frac{\sum_{n=1}^{N} s_{i}^{n} P(H_{i}^{n} = k |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{i}=k)}$,\\
-					$\sigma_{k,i}^{2} = \frac{\sum_{n=1}^{N} (s_{i}^{n} - \mu_{k,i})^{2} P(H_{i}^{n} = k |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{i}=k)}$.
-				}
-				\caption{M-step of the EM algorithm.}
-				\label{algo:Mstep}
+%         \textbf{Meta-parameters:}\\
+%         $K$\\
+        \tcp{Initialization:}
+        $\alpha_{0}(k) = 1$\\
+        \tcp{Induction:}
+%         \tcp{Top-Down loop over the nodes of the tree:}
+        \For{All nodes $i$ of the tree $\mcalT\backslash\{0\}$ (Top-Down)}{
+          $\alpha_{i}(k) = \frac{1}{P(H_{i}=k)} \sum_{g=1}^{K} \alpha_{\rho(i)}(g) \epsilon_{i}^{(gk)} \beta_{\rho(i)\backslash i}(g) P(H_{\rho(i)}=g)$
+        }
+        \caption{Smoothed downward algorithm.}
+        \label{algo:Smoothed downward}    
+      \end{algorithm}        
+    \end{center}
+    %
+    \begin{center}
+      \begin{algorithm}
+%         \textbf{Meta-parameters:}\\
+%         $K$,\\
+%         Distribution family for $P_{\theta}$ \tcp*{Here Gaussian}
+%         $N$ \tcp*{Number of observed realizations of the signal}
+        \tcp{Initialization:}
+        $\pi_{0}(k) = \frac{1}{N} \sum_{n=1}^{N} P(H_{0}^{n}=m|s_{0}^{n},\Theta^{l})$\\
+        \tcp{Induction:}
+%         \tcp{Loop over the nodes of the tree:}
+        \For{All nodes $i$ of the tree $\mcalT\backslash\{0\}$}{
+          $P(H_{i}=k) = \frac{1}{N} \sum_{n=1}^{N} P(H_{i}^{n}=k|\bar{s}_{0}^{n},\Theta^{l})$,\\
+          $\epsilon_{i}^{gk} = \frac{\sum_{n=1}^{N} P(H_{i}^{n} = k, H_{\rho(i)}^{n}=g |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{\rho(i)}=k)}$,\\
+          $\mu_{k,i} = \frac{\sum_{n=1}^{N} s_{i}^{n} P(H_{i}^{n} = k |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{i}=k)}$,\\
+          $\sigma_{k,i}^{2} = \frac{\sum_{n=1}^{N} (s_{i}^{n} - \mu_{k,i})^{2} P(H_{i}^{n} = k |\bar{s}_{0}^{n}, \Theta^{l})} {N P(H_{i}=k)}$.
+        }
+        \caption{M-step of the EM algorithm.}
+        \label{algo:Mstep}
       \end{algorithm}        
     \end{center}
     
@@ -275,7 +275,7 @@
 
 
 \section{Conclusion}
-	\label{sec:Conlusion}
+  \label{sec:Conlusion}
 
 
 
