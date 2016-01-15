@@ -20,8 +20,9 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{crouse1998wavelet}
-\citation{bruna2010classification}
+\citation{DNN,CNN}
+\citation{alexNet}
+\citation{microsoft cortana}
 \citation{bruna}
 \citation{lecun1995convolutional}
 \citation{work translation invariant,work rotation invariant,work rigid motion}
@@ -31,13 +32,6 @@
 \@writefile{lot}{\select@language{french}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{sec:Intro}{{1}{1}{Introduction}{section.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{1}{section.2}}
-\newlabel{sec:Background}{{2}{1}{Background}{section.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Scattering networks}{1}{section.3}}
-\newlabel{sec:SCN}{{3}{1}{Scattering networks}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Scattering transform}{1}{subsection.3.1}}
-\newlabel{subsec:SCN/ST}{{3.1}{1}{Scattering transform}{subsection.3.1}{}}
-\newlabel{eq:multi-scale directional wavelet}{{1}{1}{Scattering transform}{equation.3.1}{}}
 \citation{mallat}
 \citation{}
 \citation{}
@@ -45,44 +39,50 @@
 \citation{mallat gis}
 \citation{anden2011multiscale}
 \citation{bruna2010classification}
-\citation{Mallat ST}
 \citation{bruna}
 \citation{platt1999probabilistic}
 \citation{jordan2002discriminative}
-\citation{Crouse and Durand}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Scattering networks}{2}{section.2}}
+\newlabel{sec:SCN}{{2}{2}{Scattering networks}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Scattering transform}{2}{subsection.2.1}}
+\newlabel{subsec:SCN/ST}{{2.1}{2}{Scattering transform}{subsection.2.1}{}}
+\newlabel{eq:multi-scale directional wavelet}{{1}{2}{Scattering transform}{equation.2.1}{}}
+\newlabel{eq:wavelet transform}{{2}{2}{Scattering transform}{equation.2.2}{}}
+\newlabel{eq:Scattering transform}{{3}{2}{Scattering transform}{equation.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Scattering convolutional network}{2}{subsection.2.2}}
+\newlabel{subsec:SCN/SCN}{{2.2}{2}{Scattering convolutional network}{subsection.2.2}{}}
+\newlabel{eq:One step propagator}{{4}{2}{Scattering convolutional network}{equation.2.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Scattering convolution network.}}{2}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:SCN 1}{{1}{2}{Scattering convolution network}{figure.caption.1}{}}
-\newlabel{eq:wavelet transform}{{2}{2}{Scattering transform}{equation.3.2}{}}
-\newlabel{eq:Scattering transform}{{3}{2}{Scattering transform}{equation.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Scattering convolutional network}{2}{subsection.3.2}}
-\newlabel{subsec:SCN/SCN}{{3.2}{2}{Scattering convolutional network}{subsection.3.2}{}}
-\newlabel{eq:One step propagator}{{4}{2}{Scattering convolutional network}{equation.3.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Frequency decreasing scattering convolution network.}}{2}{figure.caption.2}}
 \newlabel{fig:SCN 2}{{2}{2}{Frequency decreasing scattering convolution network}{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}The Scattering hidden Markov tree:}{2}{section.4}}
-\newlabel{sec:SCHMT}{{4}{2}{The Scattering hidden Markov tree:}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Hidden Markov tree model}{2}{subsection.4.1}}
-\newlabel{subsec:SCHMT/HMT model}{{4.1}{2}{Hidden Markov tree model}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Scattering convolutional classifier}{2}{subsection.2.3}}
+\newlabel{subsec:SCN/SCC}{{2.3}{2}{Scattering convolutional classifier}{subsection.2.3}{}}
+\citation{Crouse and Durand}
 \citation{kingsbury2001complex}
 \citation{someone}
 \citation{Durand}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Scattering convolutional hidden Markov tree.\relax }}{3}{figure.caption.3}}
 \newlabel{fig:SCHMT 1}{{3}{3}{Scattering convolutional hidden Markov tree.\relax }{figure.caption.3}{}}
-\newlabel{eq:SCHMT - parameters}{{5}{3}{Hidden Markov tree model}{equation.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Learning the tree parameters}{3}{subsection.4.2}}
-\newlabel{subsec:SCHMT/Learning}{{4.2}{3}{Learning the tree parameters}{subsection.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Classification results}{3}{section.5}}
-\newlabel{sec:Experiments}{{5}{3}{Classification results}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}}
-\newlabel{sec:Conlusion}{{6}{3}{Conclusion}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The Scattering hidden Markov tree:}{3}{section.3}}
+\newlabel{sec:SCHMT}{{3}{3}{The Scattering hidden Markov tree:}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Hidden Markov tree model}{3}{subsection.3.1}}
+\newlabel{subsec:SCHMT/HMT model}{{3.1}{3}{Hidden Markov tree model}{subsection.3.1}{}}
+\newlabel{eq:SCHMT - parameters}{{5}{3}{Hidden Markov tree model}{equation.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Learning the tree parameters}{3}{subsection.3.2}}
+\newlabel{subsec:SCHMT/Learning}{{3.2}{3}{Learning the tree parameters}{subsection.3.2}{}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Smoothed upward algorithm.\relax }}{3}{algocf.1}}
 \newlabel{algo:Smoothed upward}{{1}{3}{Learning the tree parameters}{algocf.1}{}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Smoothed downward algorithm.\relax }}{3}{algocf.2}}
 \newlabel{algo:Smoothed downward}{{2}{3}{Learning the tree parameters}{algocf.2}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces M-step of the EM algorithm.\relax }}{3}{algocf.3}}
-\newlabel{algo:Mstep}{{3}{3}{Learning the tree parameters}{algocf.3}{}}
 \bibstyle{IEEEbib}
-\@writefile{toc}{\contentsline {section}{\numberline {7}COPYRIGHT FORMS}{4}{section.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}REFERENCES}{4}{section.8}}
-\newlabel{sec:ref}{{8}{4}{REFERENCES}{section.8}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces M-step of the EM algorithm.\relax }}{4}{algocf.3}}
+\newlabel{algo:Mstep}{{3}{4}{Learning the tree parameters}{algocf.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Classification results}{4}{section.4}}
+\newlabel{sec:Experiments}{{4}{4}{Classification results}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{4}{section.5}}
+\newlabel{sec:Conlusion}{{5}{4}{Conclusion}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}COPYRIGHT FORMS}{4}{section.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}REFERENCES}{4}{section.7}}
+\newlabel{sec:ref}{{7}{4}{REFERENCES}{section.7}{}}

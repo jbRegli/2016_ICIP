@@ -1,0 +1,38 @@
+% Scattering transform 
+
+%%%% TO LATE CROP THE PDF AT THE CORRECT SIZE FOR PLOTING: %%%%
+% pdfcrop --margins '-0 -0 -0 -422' scat_tree.pdf ../scat_tree_crop.pdf
+
+% Tree for J = 4 M = 2 and L = 1
+% Layer 0 : 1 node
+% Layer 1 : 4 nodes
+% Layer 2 : 6 nodes
+
+
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\begin{document}
+\pagestyle{empty}
+%
+\tikzstyle{int}=[draw, minimum size=2em]
+\tikzstyle{init} = [pin edge={-to,thin,black}]
+
+\begin{tikzpicture}[node distance=30mm,auto,>=latex']
+	\node [int, pin={[init]below:$S_{J}[\emptyset]\mathbf{x}$}] 
+		(input) {$\mathcal{U}_{J}$};
+  \node (layer_1) [left of=input,node distance=2cm, coordinate] {input};
+  \node [int, pin={[init]below:$\{S_{J}[\lambda_{1}]\mathbf{x}\}$}]
+		(layer_2) [right of=input] {$\mathcal{U}_{J}$};
+% 	\nodec (layer_3) 
+		
+		
+  \node [coordinate] (end) [right of=layer_2, node distance=2cm]{};
+  \path[->] (layer_1) edge node {$\mathbf{x}$} (input);
+  \path[->] (input) edge node {$\{U_{J}[\lambda_{1}]\mathbf{x}\}$} (layer_2);
+  \draw[->] (layer_2) edge node {$\{U_{J}[\lambda_{1},\lambda_{2}]\mathbf{x}\}$} (end) ;
+\end{tikzpicture}
+
+\end{document}
+

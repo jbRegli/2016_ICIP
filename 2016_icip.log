@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.16)  14 JAN 2016 16:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.16)  15 JAN 2016 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,157 +1255,166 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 66.
 
 
-Package natbib Warning: Citation `crouse1998wavelet' on page 1 undefined on inp
-ut line 71.
+Package natbib Warning: Citation `DNN' on page 1 undefined on input line 69.
 
 
-Package natbib Warning: Citation `bruna2010classification' on page 1 undefined 
-on input line 71.
+Package natbib Warning: Citation `CNN' on page 1 undefined on input line 69.
 
 
-LaTeX Warning: Reference `sec:Conclusion' on page 1 undefined on input line 73.
+Package natbib Warning: Citation `alexNet' on page 1 undefined on input line 69
+.
+
+
+Package natbib Warning: Citation `microsoft cortana' on page 1 undefined on inp
+ut line 69.
+
+
+LaTeX Warning: Reference `sec:Background' on page 1 undefined on input line 86.
 
 
 
-Package natbib Warning: Citation `bruna' on page 1 undefined on input line 91.
+LaTeX Warning: Reference `sec:Conclusion' on page 1 undefined on input line 86.
+
+
+
+Package natbib Warning: Citation `bruna' on page 1 undefined on input line 101.
+
 
 
 Package natbib Warning: Citation `lecun1995convolutional' on page 1 undefined o
-n input line 91.
+n input line 101.
 
 
 Package natbib Warning: Citation `work translation invariant' on page 1 undefin
-ed on input line 91.
+ed on input line 101.
 
 
 Package natbib Warning: Citation `work rotation invariant' on page 1 undefined 
-on input line 91.
+on input line 101.
 
 
 Package natbib Warning: Citation `work rigid motion' on page 1 undefined on inp
-ut line 91.
+ut line 101.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 107.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 117.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 
-Package natbib Warning: Citation `mallat' on page 2 undefined on input line 111
+Package natbib Warning: Citation `mallat' on page 2 undefined on input line 121
 .
 
 
 Package natbib Warning: Citation `Deep Roto-Translation Scattering for Object C
-lassification' on page 2 undefined on input line 132.
+lassification' on page 2 undefined on input line 142.
 
-<Images/ST_freqDec_crop.pdf, id=78, 547.04375pt x 145.54375pt>
+<Images/ST_freqDec_crop.pdf, id=71, 504.88625pt x 145.54375pt>
 File: Images/ST_freqDec_crop.pdf Graphic file (type pdf)
 
 <use Images/ST_freqDec_crop.pdf>
-Package pdftex.def Info: Images/ST_freqDec_crop.pdf used on input line 136.
-(pdftex.def)             Requested size: 238.48798pt x 63.45091pt.
+Package pdftex.def Info: Images/ST_freqDec_crop.pdf used on input line 146.
+(pdftex.def)             Requested size: 238.49066pt x 68.74979pt.
 
 
 Package natbib Warning: Citation `mallat gis' on page 2 undefined on input line
- 144.
+ 154.
 
 
 Package natbib Warning: Citation `anden2011multiscale' on page 2 undefined on i
-nput line 144.
+nput line 154.
 
 
 Package natbib Warning: Citation `bruna2010classification' on page 2 undefined 
-on input line 144.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
-
- []
+on input line 154.
 
 File: Images/ST_freqDec_crop.pdf Graphic file (type pdf)
 <use Images/ST_freqDec_crop.pdf>
-Package pdftex.def Info: Images/ST_freqDec_crop.pdf used on input line 152.
-(pdftex.def)             Requested size: 238.48798pt x 63.45091pt.
+Package pdftex.def Info: Images/ST_freqDec_crop.pdf used on input line 162.
+(pdftex.def)             Requested size: 238.49066pt x 68.74979pt.
 
 
-Package natbib Warning: Citation `Mallat ST' on page 2 undefined on input line 
-166.
-
-
-Package natbib Warning: Citation `bruna' on page 2 undefined on input line 166.
+Package natbib Warning: Citation `bruna' on page 2 undefined on input line 173.
 
 
 
-Package natbib Warning: Citation `platt1999probabilistic' on page 2 undefined o
-n input line 166.
-
-
-Package natbib Warning: Citation `jordan2002discriminative' on page 2 undefined
- on input line 166.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-
+Overfull \hbox (20.42798pt too wide) in paragraph at lines 173--174
+[]\T1/ptm/m/n/10 (-20) In the ori-gi-nal fra-me-work, the scat-te-ring net-work
+ $\OML/cmm/m/it/10 ST[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 )$
  []
 
 
-Package natbib Warning: Citation `Crouse and Durand' on page 2 undefined on inp
-ut line 171.
+Package natbib Warning: Citation `platt1999probabilistic' on page 2 undefined o
+n input line 183.
+
+
+Package natbib Warning: Citation `jordan2002discriminative' on page 2 undefined
+ on input line 183.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
 
 [2 <./Images/ST_freqDec_crop.pdf>]
-<Images/scat_HMT_crop.pdf, id=136, 516.93124pt x 151.56625pt>
+
+Package natbib Warning: Citation `Crouse and Durand' on page 3 undefined on inp
+ut line 188.
+
+<Images/scat_HMT_crop.pdf, id=134, 516.93124pt x 151.56625pt>
 File: Images/scat_HMT_crop.pdf Graphic file (type pdf)
 
 <use Images/scat_HMT_crop.pdf>
-Package pdftex.def Info: Images/scat_HMT_crop.pdf used on input line 187.
+Package pdftex.def Info: Images/scat_HMT_crop.pdf used on input line 204.
 (pdftex.def)             Requested size: 238.49326pt x 69.92714pt.
 
 
 Package natbib Warning: Citation `kingsbury2001complex' on page 3 undefined on 
-input line 194.
+input line 211.
 
 
-Package natbib Warning: Citation `someone' on page 3 undefined on input line 20
-0.
+Package natbib Warning: Citation `someone' on page 3 undefined on input line 21
+7.
 
 
-Package natbib Warning: Citation `Durand' on page 3 undefined on input line 200
+Package natbib Warning: Citation `Durand' on page 3 undefined on input line 217
 .
 
 [3 <./Images/scat_HMT_crop.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-[4
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
  (./2016_icip.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 354.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 354.
 Package rerunfilecheck Info: File `2016_icip.out' has not changed.
-(rerunfilecheck)             Checksum: BA1C4CE418322F1A55F29A235D3238EB;715.
+(rerunfilecheck)             Checksum: CEADA98965BEFC7786C3285C39F1F70F;754.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
  ) 
 Here is how much of TeX's memory you used:
- 22666 strings out of 493304
- 380682 string characters out of 6139871
- 531227 words of memory out of 5000000
- 25432 multiletter control sequences out of 15000+600000
- 49534 words of font info for 176 fonts, out of 8000000 for 9000
+ 22657 strings out of 493304
+ 380614 string characters out of 6139871
+ 533259 words of memory out of 5000000
+ 25435 multiletter control sequences out of 15000+600000
+ 49014 words of font info for 168 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,15n,57p,868b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,15n,57p,899b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1428,10 +1437,10 @@ ts/type1/public/stmaryrd/stmary7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
 i8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 2016_icip.pdf (4 pages, 333011 bytes).
+Output written on 2016_icip.pdf (4 pages, 334253 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
+ 268 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  35 named destinations out of 1000 (max. 500000)
  27767 words of extra memory for PDF output out of 29859 (max. 10000000)
 
