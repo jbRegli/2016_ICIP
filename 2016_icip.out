@@ -1,12 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Background}{}% 2
-\BOOKMARK [1][-]{section.3}{Scattering networks}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Scattering transform}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Scattering convolutional network}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{The Scattering hidden Markov tree:}{}% 6
-\BOOKMARK [2][-]{subsection.4.1}{Hidden Markov tree model}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.2}{Learning the tree parameters}{section.4}% 8
-\BOOKMARK [1][-]{section.5}{Classification results}{}% 9
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 10
-\BOOKMARK [1][-]{section.7}{COPYRIGHT FORMS}{}% 11
-\BOOKMARK [1][-]{section.8}{REFERENCES}{}% 12
+\BOOKMARK [1][-]{section.2}{Scattering networks}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Scattering transform}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Scattering convolutional network}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Scattering convolutional classifier}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{The Scattering hidden Markov tree:}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Hidden Markov tree model}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Learning the tree parameters}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Classification results}{}% 9
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 10
+\BOOKMARK [1][-]{section.6}{COPYRIGHT FORMS}{}% 11
+\BOOKMARK [1][-]{section.7}{REFERENCES}{}% 12

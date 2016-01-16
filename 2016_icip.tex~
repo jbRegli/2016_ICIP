@@ -127,7 +127,11 @@
     \end{equation}
     \vspace{-10pt}
     
+<<<<<<< HEAD
     Such non-linearised averaged wavelet coefficients are used in various form in computer vision (SIFT~\citep{sift}, DAISY~\citep{daisy}), but the scattering transform proposes a new non-linearity as well as a layer based architecture.
+=======
+    Such non-linearised averaged wavelet coefficients are used in various form in computer vision (SIFT~\citep{}, DAISY~\citep{}), but the scattering transform proposes a new non-linearity as well as a layer based architecture.
+>>>>>>> 50ace4d0f5325770843578db34ce5c4c2e1d47e3
   
   \subsection{Scattering convolutional network}
     \label{subsec:SCN/SCN}
@@ -152,7 +156,11 @@
       \vspace{-15pt}
     \end{figure}
     
-    The scattering energy is mainly concentrated along frequency decreasing paths, \ie for which $\abs{\lambda_{k+1}} \leq \abs{\lambda_{k}}$~\citep{mallat gis}. The energy contained in the other paths is negligible and thus for applications only frequency decreasing paths are considered. Moreover there exist a path length $M > 0$ after which all longer paths can be neglected. For signal processing applications, this decay appears to be exponential. And for classification applications, paths of length $M = 3$, \ie two convolutions, provides the most interesting results~\citep{anden2011multiscale},~\citep{bruna2010classification}.
+<<<<<<< HEAD
+    The scattering energy is mainly concentrated along frequency decreasing paths, \ie for which $\abs{\lambda_{k+1}} \leq \abs{\lambda_{k}}$~\citep{mallat gis}. The energy contained in the other paths is negligible and thus for applications only frequency decreasing paths are considered. Moreover there exist a path length $M > 0$ after which all longer paths can be neglected. For signal processing applications, this decay appears to be exponential. And for classification applications, paths of length $M = 3$ provides the most interesting results~\citep{anden2011multiscale},~\citep{bruna2010classification}.\\
+=======
+    The scattering energy is mainly concentrated along frequency decreasing paths, \ie for which $\abs{\lambda_{k+1}} \leq \abs{\lambda_{k}}$~\citep{mallat gis}. The energy contained in the other paths is negligible and thus for applications only frequency decreasing paths are considered. Moreover there exist a path length $M > 0$ after which all longer paths can be neglected. For signal processing applications, this decay appears to be exponential. And for classification applications, paths of length $M = 3$ provides the most interesting results~\citep{anden2011multiscale},~\citep{bruna2010classification}.
+>>>>>>> 50ace4d0f5325770843578db34ce5c4c2e1d47e3
       
     This restrictions yield an easier parametrization of a scattering network. Indeed its now completely defined by the mother wavelet $\phi$, the maximum path length considered $M$, the finest scale level considered $J$ and the number of orientation considered $L$.
       
@@ -181,16 +189,26 @@
 \section{The Scattering hidden Markov tree:}
 \label{sec:SCHMT}
 
+<<<<<<< HEAD
+  \citep{Mallat ST} introduced the use of scattering networks combined with a support vector machine classifier to achieve competitive classification performance on some problems~\citep{bruna}. However this method only provides a boolean label for each class. Methods to express the output of an SVM as a probability exists~\citep{platt1999probabilistic} but they are just a rescaling of the output and not a true probabilistic approach. If one is interested in a true probabilistic model to describe the scattering coefficients, it is quite natural to try expressing them as a probabilistic graphical model. Furthermore generative models are known to have better accuracy for inference tasks when the number of training example is low~\citep{jordan2002discriminative}.
+=======
   SCNs combined to a SVM classifier display good performance on certain tasks but are not adapted when the number of training example is extremely limited. Furthermore they also provide only boolean label for each class. Expressing the output of an SVM as a probability is feasible~\citep{platt1999probabilistic} but this is more rescaling of the output than a true probabilistic approach. If one is interested in a true probabilistic models to describe the scattering coefficients, it is quite natural to try expressing them as a probabilistic graphical model. Moreover generative models are known to provide better accuracy for inference tasks when the number of training example is low~\citep{jordan2002discriminative}. \\
-
+>>>>>>> 50ace4d0f5325770843578db34ce5c4c2e1d47e3
   
   \subsection{Hidden Markov tree model}
     \label{subsec:SCHMT/HMT model}
     %TODO Where to cite Crouse and Durand
+<<<<<<< HEAD
+    We propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to create the SCHMTs. We model an SCN by a hidden Markov tree composed of a set of visible nodes $\{\bfS_{i}\}_{i \in \mcalT}$ and a set of hidden node $\{\bfH_{i}\}_{i \in \mcalT}$. Both sets are organized in a tree structure such that for any index $i$ of the tree, $S_{i} \in \dsR$ and $H_{i} \in \llbracket 1,K \rrbracket$ where $K$ is the number of possible hidden states.
+    The initial state is drawn from a discrete non uniform distribution $\pi_{0}$ such that, $\forall k \in \llbracket 1,K \rrbracket$ $\pi_{0}(k) = P(H_{0}=k)$.
+    For any index $i$ of the tree, the emission distribution describes the probability of the visible node $S_{i}$ conditional to the hidden state $H_{i}$ such that, $\forall i \in \mcalT \, ,\, \forall k \in \llbracket1,K\rrbracket$ and $\forall s \in \dsR$ $P(S_{i}=s_{i}|H_{i}=k) = P_{\theta_{k,i}}(s)$, where $P_{\theta_{k,i}}$ belongs to a parametric distribution family and $\theta_{k,i}$ is the vector of emission parameters for the state $k$ and node $i$. In the remainder of the paper the emission distribution is Gaussian so that $P(S_{i}=s | H_{i}=k) = \mcalN(\mu_{k,i},\sigma_{k,i})$, where $\theta_{k,i}=(\mu_{k,i},\sigma_{k,i})$ with $\mu_{k,i}$ and $\sigma_{k,i}$ being respectively the mean and the variance of the Gaussian for the $k$-th value of the mixture and the node $i$.
+    Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\forall i \in \mcalT \backslash \{ 0 \} \; \forall g,k \in \llbracket1,K\rrbracket^{2}$ $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$ where $\epsilon_{i}$ defines a transition probability matrix such that $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
+=======
     We propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to create the SCHMTs. We model an SCN by a hidden Markov tree composed visible and hidden $\{\bfS_{i} , \bfH_{i}\}_{i \in \mcalT}$ nodes where $\forall i \in \mcalT$ $S_{i} \in \dsR$ and $H_{i} \in \llbracket 1,K \rrbracket$ and $K$ is the number of possible hidden states.
     The initial state is drawn from a discrete non uniform distribution $\pi_{0}$ such that $\pi_{0}(k) = P(H_{0}=k)$.
     For any index $i$ of the tree, the emission distribution describes the probability of the visible node $S_{i}$ conditional to the hidden state $H_{i}$ and $P(S_{i}=s_{i}|H_{i}=k) = P_{\theta_{k,i}}(s)$ where $P_{\theta_{k,i}}$ belongs to a parametric distribution family and $\theta_{k,i}$ is the vector of emission parameters for the state $k$ and node $i$. In the remainder of the paper the emission distribution is Gaussian so that $P(S_{i}=s | H_{i}=k) = \mcalN(\mu_{k,i},\sigma_{k,i})$, where $\theta_{k,i}=(\mu_{k,i},\sigma_{k,i})$ with $\mu_{k,i}$ and $\sigma_{k,i}$ being respectively the mean and the variance of the Gaussian for the $k$-th value of the mixture and the node $i$.
     Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$ where $\epsilon_{i}$ defines a transition probability matrix such that $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
+>>>>>>> 50ace4d0f5325770843578db34ce5c4c2e1d47e3
     %TODO: find this formula in Durand article
 
     Such a model is pictured in Figure~\ref{fig:SCHMT 1} and for a given scattering architecture ---\ie fixed $M$, $J$ and $L$--- the SCHMT model is fully parametrized by,
