@@ -83,7 +83,7 @@
   
 %   We proposes a method combining a recently proposed deterministic analytically tractable transformation inspired by deep convolutional to a probabilistic graphical model in order to create a powerful probabilistic tool to handle high dimensional prediction problems. In a similar fashion to the work done by Crouse on wavelet trees~\citep{crouse1998wavelet}, we propose to describe Mallat's scattering convolutional scattering transform~\citep{bruna2010classification} using a hidden Markov tree. Doing so we develop a new framework to model high-dimensional inputs. As opposed to the commonly used simple classification method, once trained our model can tackle prediction problems but also other inference tasks ---\eg generation, sensitivity analysis... 
 
-  In  Section~\ref{sec:Background}  we  present  the  requisite  background  of high dimensional signal classification. Section~\ref{sec:SCN} introduces the Scattering Transform and some of its properties.   We  fuse these to an hidden Markov Tree concepts in Section~\ref{sec:SCHMT}, propose our Scattering Hidden Markov Tree (SCHMT), and describe the inferential machinery. In Section~\ref{sec:Experiments} we perform classification on a selection of standard datasets. We draw conclusions in Section~\ref{sec:Conclusion}
+  In  Section~\ref{sec:Background}  we  present  the  requisite  background  of high dimensional signal classification. Section~\ref{sec:SCN} introduces the Scattering Transform and some of its properties.   We  fuse these to an hidden Markov Tree concepts in Section~\ref{sec:SCHMT}, propose our Scattering Hidden Markov Tree (SCHMT), and describe the inferential machinery. In Section~\ref{sec:Exps} we perform classification on a selection of standard datasets. We draw conclusions in Section~\ref{sec:Conclusion}
 
   %TODO:
   % DL --- pb: not analytically tractable & lot of training examples required
@@ -144,7 +144,7 @@
     
     \begin{figure}
       \begin{center}
-        \includegraphics[width=3.3in, height=2in, keepaspectratio]{ST_freqDec_crop.pdf}
+        \includegraphics[width=3.3in, height=2in, keepaspectratio]{scatnet_crop.pdf}
         \caption[Scattering convolution network.]{\centering  Scattering networks can be seen as neural networks iterating over wavelet  modulus  operators $\mcalU_{j}$. Each layer $m$ outputs the averaged  invariants $S[p_{m}]\bfx$ and covariant coefficients $U[p_{m+1}]\bfx$.}
         \label{fig:SCN 1}
         % TODO: Change it for something similar to Siffre rigid motion
@@ -181,17 +181,23 @@
 \section{The Scattering hidden Markov tree}
 \label{sec:SCHMT}
 
-  SCNs associated to a SVM classifier achieve good performance on classification task. However SVMs are not adapted to extremely limited number of training samples. They also provide only boolean labeling. The output of an SVM can be expressed as a probability~\citep{platt1999probabilistic} but it is a rescaling more than true probability. If one is interested in a true probabilistic models of the scattering coefficients, it is quite natural to express them as a probabilistic graphical model. We thus propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to non-regular non-homogeneous tree structure of SCNs.
+	State of the art performance can be achieved using SCNs associated to SVMs. However this approach is not adapted to very small training sets or to deliver a probabilistic output. To overcome those limitations we propose an adaptation of Crouse~\citep{crouse} and Durand~\citep{Durand} wavelet hidden Markov trees to the non-regular non-homogeneous tree structure of SCNs.
+  %SCNs associated to a SVM classifier achieve good performance on classification task. However SVMs are not adapted to extremely limited number of training samples. They also provide only boolean labeling. The output of an SVM can be expressed as a probability~\citep{platt1999probabilistic} but it is a rescaling more than true probability. If one is interested in a true probabilistic models of the scattering coefficients, it is quite natural to express them as a probabilistic graphical model. We thus propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to non-regular non-homogeneous tree structure of SCNs.
   
   \subsection{Hidden Markov tree model}
     \label{subsec:SCHMT/HMT model}
     %TODO Where to cite Crouse and Durand
         
-    We model an SCN by a hidden Markov tree composed visible and hidden $\{\bfS_{i} , \bfH_{i}\}_{i \in \mcalT}$ nodes where $\forall i \in \mcalT$, $S_{i} \in \dsR$, $H_{i} \in \llbracket 1,K \rrbracket$ and $K$ is the number of hidden states. SCHMT models the correlation between scattering coefficients and there  through an hidden state.
+%     We model an SCN by a hidden Markov tree composed visible and hidden $\{\bfS_{i} , \bfH_{i}\}_{i \in \mcalT}$ nodes. where $\forall i \in \mcalT$, $S_{i} \in \dsR$, $H_{i} \in \llbracket 1,K \rrbracket$ and $K$ is the number of hidden states. SCHMTs assumes that the correlation between a scattering coefficient and its father can be expressed in a simple form via the hidden states.
+    The HMT models the marginal distribution of each real ST coefficient $S_i$ as a Gaussian mixture. To each $S_i$, we associate a discrete hidden state $H_i$ that takes on values in $\llbracket 1,K \rrbracket$ with probability mass function (pmf) $P(H_i)$. Conditioned on $H_i = k$, $S_i$ is Gaussian with mean $\mu_{i,k}$ and variance $\sigma_{i,k}$. Thus, its overall marginal PDF is given by $P(w_i) = \sum_{k=1}^{K} P(H_i = m)P(S_i| H_i=k)$ with $P(S_i|H_i=k) \sim \mcalN(\mu_{i,k}, \sigma_{i,k})$. While each scattering coefficient $S_i$ is conditionally gaussian given its state variable $H_i$, overall it has a non-Gaussian density. Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$. This yields $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
     
-    The initial state is drawn from a discrete non uniform distribution $\pi_{0}$ such that $\pi_{0}(k) = P(H_{0}=k)$.
-    For any index $i$ of the tree, the emission distribution describes the probability of the visible node $S_{i}$ conditional to the hidden state $H_{i}$ and $P(S_{i}=s_{i}|H_{i}=k) = P_{\theta_{k,i}}(s)$ where $P_{\theta_{k,i}}$ belongs to a parametric distribution family and $\theta_{k,i}$ is the vector of emission parameters for the state $k$ and node $i$. In the remainder of the paper the emission distribution is Gaussian so that $P(S_{i}=s | H_{i}=k) = \mcalN(\mu_{k,i},\sigma_{k,i})$, where $\theta_{k,i}=(\mu_{k,i},\sigma_{k,i})$ with $\mu_{k,i}$ and $\sigma_{k,i}$ being respectively the mean and the variance of the Gaussian for the $k$-th value of the mixture and the node $i$.
-    Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$ where $\epsilon_{i}$ defines a transition probability matrix such that $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
+    
+    
+    
+    
+%     The initial state is drawn from a discrete non uniform distribution $\pi_{0}$ such that $\pi_{0}(k) = P(H_{0}=k)$.
+%     For any index $i$ of the tree, the emission distribution describes the probability of the visible node $S_{i}$ conditional to the hidden state $H_{i}$ and $P(S_{i}=s_{i}|H_{i}=k) = P_{\theta_{k,i}}(s)$ where $P_{\theta_{k,i}}$ belongs to a parametric distribution family and $\theta_{k,i}$ is the vector of emission parameters for the state $k$ and node $i$. In the remainder of the paper the emission distribution is Gaussian so that $P(S_{i}=s | H_{i}=k) = \mcalN(\mu_{k,i},\sigma_{k,i})$, where $\theta_{k,i}=(\mu_{k,i},\sigma_{k,i})$ with $\mu_{k,i}$ and $\sigma_{k,i}$ being respectively the mean and the variance of the Gaussian for the $k$-th value of the mixture and the node $i$.
+%     Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$ where $\epsilon_{i}$ defines a transition probability matrix such that $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
     %TODO: find this formula in Durand article
 
     Such a model is pictured in Figure~\ref{fig:SCHMT 1} and for a given scattering architecture ---\ie fixed $M$, $J$ and $L$--- the SCHMT model is fully parametrized by,
@@ -209,22 +215,26 @@
         \label{fig:SCHMT 1}
         % TODO: Narrow the gaps
       \end{center}
+      \vspace{-15pt}
     \end{figure}
+    
 
-    This model implies to do two assumptions on the scattering transform. First one need to assume --- $K$-populations--- that a signal’s scattering coefficients can be described by K clusters. This is a common assumptions for standard wavelets~\citep{kingsbury2001complex} and hence it can be extended to the scattering transform. The SCHMT also assumed ---persistence--- that the informative character of a coefficients is propagated across layers. This assumption is sound since scattering coefficients are highly correlated across layers~\citep{Oyallon}.
+    
+    This model implies two assumptions on the scattering transform. First --- $K$-populations--- that a signal’s scattering coefficients can be described by $K$ clusters. This is a common assumptions for standard wavelets~\citep{kingsbury2001complex} and hence it can be extended to the scattering transform. The SCHMT also assumed ---persistence--- that the informative character of a coefficients is propagated across layers. This assumption is sound since scattering coefficients are highly correlated~\citep{Oyallon}.
     
   \subsection{Learning the tree parameters}
     \label{subsec:SCHMT/Learning}    
 
     The SCHMT is trained using the smoothed version of the Expectation-Maximization (EM) algorithm \citep{someone} for hidden Markov trees proposed by~\citep{Durand} and adapted to non-homogeneous and non-binary trees.
     
-    The smoothed version of the E-step requires the computation of the conditional probability distributions $\xi_{i}(k) = P(H_{i}=k | \bar{\mcalS}_{i}= \bar{s}_{i})$ (smoothed probability) and $P(H_{i}=k, H_{\rho(i)}=g | \bar{\mcalS}_{i}= \bar{s}_{i})$ for each node $i \in \mcalT$ and states $k$ and $g$. This can be achieved through an upward-downward recursion displayed in Algorithm~\ref{algo:Smoothed upward} and~\ref{algo:Smoothed downward}.
-    \vspace{-20pt}
+    Let $\bar{\mcalS}_{i}= \bar{s}_{i}$ be the observed sub-tree rooted at node $i$. By convention $\bar{\mcalS}_{0}$ denotes the entire observed tree. The smoothed version of the E-step requires the computation of the conditional probability distributions $\xi_{i}(k) = P(H_{i}=k | \bar{\mcalS}_{i}= \bar{s}_{i})$ (smoothed probability) and $P(H_{i}=k, H_{\rho(i)}=g | \bar{\mcalS}_{i}= \bar{s}_{i})$ for each node $i \in \mcalT$ and states $k$ and $g$. This can be achieved through an upward-downward recursion displayed in Algorithm~\ref{algo:Smoothed upward} and~\ref{algo:Smoothed downward}.
+    
+    \vspace{-15pt}
     \setlength{\algomargin}{+4pt}
     \begin{center}
       \begin{algorithm}
-	\vspace{-3pt}
-	\fontsize{8pt}{10pt}\selectfont
+				\vspace{-3pt}
+				\fontsize{8pt}{10pt}\selectfont
 %          \textbf{Meta-parameters:}\\
 %         $K$\\
         \tcp{Initialization:}
@@ -258,8 +268,8 @@
     \vspace{-20pt}  
     \begin{center}
       \begin{algorithm}
-	\vspace{-3pt}
-	\fontsize{8pt}{10pt}\selectfont
+				\vspace{-3pt}
+				\fontsize{8pt}{10pt}\selectfont
 %         \textbf{Meta-parameters:}\\
 %         $K$\\
         \tcp{Initialization:}
@@ -271,16 +281,15 @@
         }
         \caption{Smoothed downward algorithm.}
         \label{algo:Smoothed downward}  
-	\vspace{-5pt}
+				\vspace{-5pt}
       \end{algorithm}        
     \end{center}
     \vspace{-30pt}
     \vspace{-20pt}  
     \begin{center}
       \begin{algorithm}
-	\vspace{-3pt}
-	\fontsize{8pt}{10pt}\selectfont
-
+			\vspace{-3pt}
+			\fontsize{8pt}{10pt}\selectfont
 %         \textbf{Meta-parameters:}\\
 %         $K$,\\
 %         Distribution family for $P_{\theta}$ \tcp*{Here Gaussian}
@@ -297,17 +306,55 @@
         }
         \caption{M-step of the EM algorithm.}
         \label{algo:Mstep}
-	\vspace{-5pt}
+				\vspace{-5pt}
       \end{algorithm}        
     \end{center}
+    \vspace{-40pt}
+    
+	\subsection{MAP classification}
+    \label{subsec:SCN/SCC}
+    
+     Let $\Theta_{c}$ now be a set of parameters for an SCHMT $\mcalT$ learned on a training set $\{\bar{S}_{0,c}^n\}_{n \in \llbracket1, N \rrbracket} = \{ST_{(\psi, J, M, L)}(\bfx_{c}^{n})\}_{n \in \llbracket1, N \rrbracket}$ composed of the scattering representations of $N$ realizations of a signal of class $c$ . Let also $\bfx^{new}$ be another realization of this signal, not used for training and $\mcalT^{new}$ be the instance of the SCHMT generated by this realization.
+     
+     In this context the MAP algorithm aims at finding the optimal hidden tree $\hat{\bar{h}}_{0}^{new}=(\hat{h}_{0}^{new} \dots \hat{h}_{I-1}^{new})$ maximizing the probability of this sequence given the model's parameters $P(\bar{\mcalH}_{0}= \hat{\bar{h}}_{0}^{new}|\mcalT^{new},\Theta_{c})$. The MAP framework also provides $\hat{P}$ the value of this maximum.
+    
+    The MAP Algorithm can be used in a multi-class classification problem by training an SCHMT model per class and then when presented with a new realization $\bfx^{new}$ comparing the probability of the MAP hidden tree provided by each model
     
 \section{Classification results}
-  \label{sec:Experiments}
+  \label{sec:Exps}
+  
+  We compare the performance of SCHMT to those of a SCN combined to an SVM (SCN+SVM) on restrictions to small number of training examples of two standard datasets. 
+  
+  \subsection{MNIST}
+		\label{subsec:Exps/MNIST}
+		We train both SCHMT and SCN+SVM $100$ times on a limited number of training examples per class. The results are displayed in Figure~\ref{fig:SCHMT MNIST} 
 
+		\begin{figure}
+% 			\vspace{-20pt}
+			\begin{center}
+				\includegraphics[width=3in, height= 1in]{placeholder.jpg}
+			  \caption[MNIST: classification scores]{add description}
+			  % To curve with schmt and scn+svm clf score (avg + max) 
+			  %TODO: real figure
+			  \label{fig:SCHMT MNIST}
+			\end{center}
+			\vspace{-20pt}
+		\end{figure}
+		
+		Average results for low number of training examples ---$2$ and $5$--- are slightly higher for SCHMT compare to SCN+SVM. However the EM algorithm performances are still undermined by convergence issues. When convergence occurs correctly SCHMTs reach better performances than the best SVMs --- $80\%$ compared to $54\%$ for $5$ training examples. When the number of training samples grow large enough for the SVMs, this method reaches both better maximum and average experiments.
+		Finally we test the best SCHMT and SCN+SVM models trained on 5 images per class on the full testing set. %TODO: results + ccl
+		
+		When convergence occurs correctly SCHMT provides great classification score for low number of training examples
+		
+	\subsection{KTH Texture}
+		\label{subsec:Exps/KTH Texture}
+		
 
 \section{Conclusion}
   \label{sec:Conlusion}
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum venenatis finibus. Duis faucibus scelerisque hendrerit. Duis ex eros, auctor non massa non, pretium congue magna. Etiam feugiat urna in tortor consequat mattis. Nulla condimentum in arcu nec euismod. Donec ut luctus est. Mauris pellentesque, lectus ornare luctus tincidunt, lorem leo ultrices nunc, efficitur suscipit nunc mauris at ipsum. Donec eros nibh, rhoncus at mi id, mattis varius magna. Nullam luctus nisl nisl, sit amet tincidunt turpis venenatis et. Nam sem lectus, feugiat eget nisl a, dapibus vulputate urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi tincidunt aliquet dolor, eu efficitur tortor tempus id. Quisque vestibulum sapien non metus finibus, ut eleifend leo molestie.
 
+  Sed ultricies lorem sapien, non sodales ligula bibendum vel. Mauris nec elementum elit. Cras at massa nec nisi dictum bibendum. In commodo vestibulum dapibus. Aenean efficitur, tellus non imperdiet. 
 
 
 

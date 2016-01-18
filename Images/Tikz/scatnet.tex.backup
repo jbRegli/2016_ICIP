@@ -16,19 +16,23 @@
 \begin{document}
 \pagestyle{empty}
 %
-\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{filter}=[draw, minimum size=2em]
 \tikzstyle{init} = [pin edge={-to,thin,black}]
 
-\begin{tikzpicture}[node distance=40mm,auto,>=latex']
-	\node [int, pin={[init]below:$S_{J}[\emptyset]\mathbf{x}$}] 
+\begin{tikzpicture}[node distance=25mm,auto,>=latex']
+	\node [filter, pin={[init]below:$S_{J}[\emptyset]\mathbf{x}$}] 
 		(input) {$\mathcal{U}_{J}$};
   \node (layer_1) [left of=input,node distance=2cm, coordinate] {input};
-  \node [int, pin={[init]below:$\{S_{J}[\lambda_{1}]\mathbf{x}\}_{\lambda_{1} \in \Lambda}$}]
+  \node [filter, pin={[init]below:$\{S_{J}[\lambda_{1}]\mathbf{x}\}$}]
 		(layer_2) [right of=input] {$\mathcal{U}_{J}$};
+% 	\nodec (layer_3)
+
+		
+		
   \node [coordinate] (end) [right of=layer_2, node distance=2cm]{};
   \path[->] (layer_1) edge node {$\mathbf{x}$} (input);
-  \path[->] (input) edge node {$\{U_{J}[\lambda_{1}]\mathbf{x}\}_{\lambda_{1} \in \Lambda}$} (c);
-  \draw[->] (layer_2) edge node {$p$} (end) ;
+  \path[->] (input) edge node {$\{U_{J}[\lambda_{1}]\mathbf{x}\}$} (layer_2);
+  \draw[->] (layer_2) edge node {$\{U_{J}[\lambda_{1},\lambda_{2}]\mathbf{x}\}$} (end) ;
 \end{tikzpicture}
 
 \end{document}
