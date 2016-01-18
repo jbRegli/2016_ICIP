@@ -178,16 +178,17 @@
 
 % end of page 2
 
-\section{The Scattering hidden Markov tree:}
+\section{The Scattering hidden Markov tree}
 \label{sec:SCHMT}
 
-  SCNs combined to a SVM classifier display good performance on certain tasks but are not adapted when the number of training example is extremely limited. Furthermore they also provide only boolean label for each class. Expressing the output of an SVM as a probability is feasible~\citep{platt1999probabilistic} but this is more rescaling of the output than a true probabilistic approach. If one is interested in a true probabilistic models to describe the scattering coefficients, it is quite natural to try expressing them as a probabilistic graphical model. Moreover generative models are known to provide better accuracy for inference tasks when the number of training example is low~\citep{jordan2002discriminative}. \\
-
+  SCNs associated to a SVM classifier achieve good performance on classification task. However SVMs are not adapted to extremely limited number of training samples. They also provide only boolean labeling. The output of an SVM can be expressed as a probability~\citep{platt1999probabilistic} but it is a rescaling more than true probability. If one is interested in a true probabilistic models of the scattering coefficients, it is quite natural to express them as a probabilistic graphical model. We thus propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to non-regular non-homogeneous tree structure of SCNs.
   
   \subsection{Hidden Markov tree model}
     \label{subsec:SCHMT/HMT model}
     %TODO Where to cite Crouse and Durand
-    We propose an adaptation of the wavelet hidden Markov trees~\citep{Crouse and Durand} to create the SCHMTs. We model an SCN by a hidden Markov tree composed visible and hidden $\{\bfS_{i} , \bfH_{i}\}_{i \in \mcalT}$ nodes where $\forall i \in \mcalT$ $S_{i} \in \dsR$ and $H_{i} \in \llbracket 1,K \rrbracket$ and $K$ is the number of possible hidden states.
+        
+    We model an SCN by a hidden Markov tree composed visible and hidden $\{\bfS_{i} , \bfH_{i}\}_{i \in \mcalT}$ nodes where $\forall i \in \mcalT$, $S_{i} \in \dsR$, $H_{i} \in \llbracket 1,K \rrbracket$ and $K$ is the number of hidden states. SCHMT models the correlation between scattering coefficients and there  through an hidden state.
+    
     The initial state is drawn from a discrete non uniform distribution $\pi_{0}$ such that $\pi_{0}(k) = P(H_{0}=k)$.
     For any index $i$ of the tree, the emission distribution describes the probability of the visible node $S_{i}$ conditional to the hidden state $H_{i}$ and $P(S_{i}=s_{i}|H_{i}=k) = P_{\theta_{k,i}}(s)$ where $P_{\theta_{k,i}}$ belongs to a parametric distribution family and $\theta_{k,i}$ is the vector of emission parameters for the state $k$ and node $i$. In the remainder of the paper the emission distribution is Gaussian so that $P(S_{i}=s | H_{i}=k) = \mcalN(\mu_{k,i},\sigma_{k,i})$, where $\theta_{k,i}=(\mu_{k,i},\sigma_{k,i})$ with $\mu_{k,i}$ and $\sigma_{k,i}$ being respectively the mean and the variance of the Gaussian for the $k$-th value of the mixture and the node $i$.
     Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$ where $\epsilon_{i}$ defines a transition probability matrix such that $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
@@ -215,10 +216,15 @@
   \subsection{Learning the tree parameters}
     \label{subsec:SCHMT/Learning}    
 
-    The SCHMT is trained using the smoothed version of the Expectation-Maximisation algorithm \citep{someone} for hidden Markov trees proposed by~\citep{Durand} and adapted to non-homogeneous and non-binary trees.
+    The SCHMT is trained using the smoothed version of the Expectation-Maximization (EM) algorithm \citep{someone} for hidden Markov trees proposed by~\citep{Durand} and adapted to non-homogeneous and non-binary trees.
     
+    The smoothed version of the E-step requires the computation of the conditional probability distributions $\xi_{i}(k) = P(H_{i}=k | \bar{\mcalS}_{i}= \bar{s}_{i})$ (smoothed probability) and $P(H_{i}=k, H_{\rho(i)}=g | \bar{\mcalS}_{i}= \bar{s}_{i})$ for each node $i \in \mcalT$ and states $k$ and $g$. This can be achieved through an upward-downward recursion displayed in Algorithm~\ref{algo:Smoothed upward} and~\ref{algo:Smoothed downward}.
+    \vspace{-20pt}
+    \setlength{\algomargin}{+4pt}
     \begin{center}
       \begin{algorithm}
+	\vspace{-3pt}
+	\fontsize{8pt}{10pt}\selectfont
 %          \textbf{Meta-parameters:}\\
 %         $K$\\
         \tcp{Initialization:}
@@ -244,12 +250,16 @@
           $\beta_{i,\rho(i)}(k) = \sum_{g=1}^{K} \frac{\beta_{i}(g) \epsilon_{i}^{(kg)}}{P(H_{i}=g)} .P(H_{\rho(i)}=k)$
         }
         \caption{Smoothed upward algorithm.}
-        \label{algo:Smoothed upward}    
+        \label{algo:Smoothed upward}
+        \vspace{-5pt}
       \end{algorithm}        
     \end{center}
-%    
+    \vspace{-30pt}
+    \vspace{-20pt}  
     \begin{center}
       \begin{algorithm}
+	\vspace{-3pt}
+	\fontsize{8pt}{10pt}\selectfont
 %         \textbf{Meta-parameters:}\\
 %         $K$\\
         \tcp{Initialization:}
@@ -260,12 +270,17 @@
           $\alpha_{i}(k) = \frac{1}{P(H_{i}=k)} \sum_{g=1}^{K} \alpha_{\rho(i)}(g) \epsilon_{i}^{(gk)} \beta_{\rho(i)\backslash i}(g) P(H_{\rho(i)}=g)$
         }
         \caption{Smoothed downward algorithm.}
-        \label{algo:Smoothed downward}    
+        \label{algo:Smoothed downward}  
+	\vspace{-5pt}
       \end{algorithm}        
     \end{center}
-    %
+    \vspace{-30pt}
+    \vspace{-20pt}  
     \begin{center}
       \begin{algorithm}
+	\vspace{-3pt}
+	\fontsize{8pt}{10pt}\selectfont
+
 %         \textbf{Meta-parameters:}\\
 %         $K$,\\
 %         Distribution family for $P_{\theta}$ \tcp*{Here Gaussian}
@@ -282,6 +297,7 @@
         }
         \caption{M-step of the EM algorithm.}
         \label{algo:Mstep}
+	\vspace{-5pt}
       \end{algorithm}        
     \end{center}
     
