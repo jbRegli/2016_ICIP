@@ -323,7 +323,7 @@
   
   \subsection{MNIST}
 		\label{subsec:Exps/MNIST}
-		We first test SCHMTs on the digit classification dataset MNIST~\citep{MNIST}. SCHMT and SCN+SVM are both trained on a limited number of training examples per class of MNIST and tested on $20$ test samples. This experiment is run $100$ times per number of training samples and results are displayed in Figure~\ref{fig:SCHMT MNIST} 
+		We first test SCHMTs on the digit classification dataset MNIST~\citep{MNIST}. SCHMT and SCN+SVM are both trained on a limited number of training examples per class of MNIST and tested on $20$ test samples. The two methods use a scattering transform with $M=3$ orders, $J=5$ scales, $L=3$ orientations and a Morlet wavelet. The hidden Markov tree has $K=2$ states and is using a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. The SVM parameters are selected by cross-validation. This experiment is run $100$ times per number of training samples and results are displayed in Figure~\ref{fig:SCHMT MNIST} 
 
 		\begin{figure}
 % 			\vspace{-20pt}
@@ -336,19 +336,17 @@
 			\end{center}
 			\vspace{-20pt}
 		\end{figure}
-		
 		When the number of training example is really limited ---\ie $2$ or $5$--- are slightly higher for SCHMT compare to SCN+SVM. However the EM algorithm performances are undermined by convergence to local minima issues~\citep{The expectation-maximization algorithm, Moon TK}. When convergence occurs correctly SCHMTs reach much better performances than the best SVMs --- $80\%$ compared to $54\%$ for $5$ training examples. Finally, as expected, when the number of training samples grow large enough ---\ie $10$ and onward--- for the SVMs, SCN+SVMs reach both better maximum and average score.
 		
 		To assess the generalisation quality even further, we test the best SCHMT and SCN+SVM models trained on $5$ images per class on the full $10000$ test samples. %TODO: results + ccl
 		
-		When convergence occurs correctly SCHMT provides great classification score for low number of training examples
-		 
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum venenatis finibus. Duis faucibus scelerisque hendrerit. Duis ex eros, auctor non massa non, pretium congue magna. Etiam feugiat urna in tortor consequat mattis. Nulla condimentum in arcu nec euismod. Donec ut luctus est. Mauris pellentesque, lectus ornare luctus tincidunt, lorem leo ultrices nunc, efficitur suscipit nunc mauris at ipsum. Donec eros nibh, rhoncus at mi id, mattis varius magna. Nullam luctus nisl nisl, sit amet tincidunt turpis venenatis et. Nam sem lectus, feugiat eget nisl a, dapibus vulputate urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi tincidunt aliquet dolor, eu efficitur tortor tempus id. Quisque vestibulum sapien non metus finibus, ut eleifend leo molestie.
-
-		Sed ultricies lorem sapien, non sodales ligula bibendum vel. Mauris nec elementum elit. Cras at massa nec nisi dictum bibendum. In commodo vestibulum dapibus. Aenean efficitur, tellus non imperdiet. 
+		This experiment confirm the superiority of generative model for limited number of training points. It also highly some weakness of the SCHMTs as sometime convergence is problematic and the problem seems to get stronger when the number of training samples increases. However when convergence occurs correctly SCHMT provides great classification score for low number of training examples.
 		
 	\subsection{KTH Texture}
 		\label{subsec:Exps/KTH Texture}
+		
+		Further experiments are run on the KTH-TIPS texture dataset~\citep{kth-tips}. This time 
+		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum venenatis finibus. Duis faucibus scelerisque hendrerit. Duis ex eros, auctor non massa non, pretium congue magna. Etiam feugiat urna in tortor consequat mattis. Nulla condimentum in arcu nec euismod. Donec ut luctus est. Mauris pellentesque, lectus ornare luctus tincidunt, lorem leo ultrices nunc, efficitur suscipit nunc mauris at ipsum. Donec eros nibh, rhoncus at mi id, mattis varius magna. Nullam luctus nisl nisl, sit amet tincidunt turpis venenatis et. Nam sem lectus, feugiat eget nisl a, dapibus vulputate urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi tincidunt aliquet dolor, eu efficitur tortor tempus id. Quisque vestibulum sapien non metus finibus, ut eleifend leo molestie.
 
 		Sed ultricies lorem sapien, non sodales ligula bibendum vel. Mauris nec elementum elit. Cras at massa nec nisi dictum bibendum. In commodo vestibulum dapibus. Aenean efficitur, tellus non imperdiet. 
