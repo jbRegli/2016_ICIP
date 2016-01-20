@@ -1,66 +1,54 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 2016_icip.aux
-White space in argument---line 23 of file 2016_icip.aux
- : \citation{Mallat
- :                  ST}
-I'm skipping whatever remains of this command
 The style file: IEEEbib.bst
-Database file #1: bib_icip.bib
-I was expecting a `,' or a `}'---line 71 of file bib_icip.bib
- :   
- :   publisher={IEEE}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 83 of file bib_icip.bib
- :   
- :   publisher={Courant Institute of Mathematical Sciences, New York University}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 239 of file bib_icip.bib
- :   
- :   publisher={CMAP Tech. Report, Ecole Polytechnique}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You've used 2 entries,
+Database file #1: strings.bib
+Warning--entry type for "lecun2016web" isn't style-file defined
+--line 235 of file strings.bib
+Warning--entry type for "KTH2016web" isn't style-file defined
+--line 257 of file strings.bib
+Database file #2: refs.bib
+Warning--I didn't find a database entry for "someone"
+Warning--empty journal in durand2001statistical
+You've used 26 entries,
             1838 wiz_defined-function locations,
-            470 strings with 3913 characters,
-and the built_in function-call counts, 405 in all, are:
-= -- 37
-> -- 12
-< -- 0
-+ -- 5
-- -- 3
-* -- 34
-:= -- 73
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 2
+            610 strings with 7963 characters,
+and the built_in function-call counts, 6520 in all, are:
+= -- 624
+> -- 247
+< -- 7
++ -- 93
+- -- 67
+* -- 478
+:= -- 984
+add.period$ -- 29
+call.type$ -- 26
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 16
-empty$ -- 41
-format.name$ -- 3
-if$ -- 85
+cite$ -- 27
+duplicate$ -- 291
+empty$ -- 636
+format.name$ -- 67
+if$ -- 1493
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 2
-pop$ -- 2
+int.to.str$ -- 26
+missing$ -- 23
+newline$ -- 133
+num.names$ -- 26
+pop$ -- 77
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 4
+skip$ -- 161
 stack$ -- 0
-substring$ -- 28
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 492
+swap$ -- 98
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 5
-width$ -- 3
-write$ -- 24
-(There were 4 error messages)
+warning$ -- 1
+while$ -- 66
+width$ -- 28
+write$ -- 287
+(There were 4 warnings)
