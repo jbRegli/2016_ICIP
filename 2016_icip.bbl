@@ -125,6 +125,13 @@ Joakim And{\'e}n and St{\'e}phane Mallat,
 \newblock ``Multiscale scattering for audio classification.,''
 \newblock in {\em ISMIR}, 2011, pp. 657--662.
 
+\bibitem{durand2004computational}
+Jean-Baptiste Durand, Paulo Goncalves, and Yann Gu{\'e}don,
+\newblock ``Computational methods for hidden markov tree models-an application
+  to wavelet trees,''
+\newblock {\em Signal Processing, IEEE Transactions on}, vol. 52, no. 9, pp.
+  2551--2560, 2004.
+
 \bibitem{durand2001statistical}
 Jean-Baptiste Durand and Paulo Gon{\c{c}}alves,
 \newblock ``Statistical inference for hidden markov tree models and application
@@ -148,5 +155,12 @@ Eric Hayman and Barbara Caputo,
 \newblock ``Personal webpage: Kth-tips dataset,''
   \url{http://www.nada.kth.se/cvap/databases/kth-tips/index.html}, 2016,
 \newblock Accessed: 18-01-2016.
+
+\bibitem{wainwright2008graphical}
+Martin~J Wainwright and Michael~I Jordan,
+\newblock ``Graphical models, exponential families, and variational
+  inference,''
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning},
+  vol. 1, no. 1-2, pp. 1--305, 2008.
 
 \end{thebibliography}

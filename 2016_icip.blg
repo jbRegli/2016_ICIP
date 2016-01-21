@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 2016_icip.aux
 The style file: IEEEbib.bst
@@ -8,48 +8,46 @@ Warning--entry type for "lecun2016web" isn't style-file defined
 Warning--entry type for "KTH2016web" isn't style-file defined
 --line 258 of file strings.bib
 Database file #2: refs.bib
-Warning--I didn't find a database entry for "durand2004computational"
-Warning--I didn't find a database entry for "someone"
 Warning--empty journal in durand2001statistical
-You've used 24 entries,
+You've used 26 entries,
             1838 wiz_defined-function locations,
-            600 strings with 7729 characters,
-and the built_in function-call counts, 5999 in all, are:
-= -- 572
-> -- 228
+            613 strings with 8106 characters,
+and the built_in function-call counts, 6484 in all, are:
+= -- 620
+> -- 247
 < -- 7
-+ -- 86
-- -- 62
-* -- 427
-:= -- 903
-add.period$ -- 27
-call.type$ -- 24
-change.case$ -- 23
++ -- 93
+- -- 67
+* -- 474
+:= -- 980
+add.period$ -- 29
+call.type$ -- 26
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 275
-empty$ -- 586
-format.name$ -- 62
-if$ -- 1381
+cite$ -- 27
+duplicate$ -- 291
+empty$ -- 632
+format.name$ -- 67
+if$ -- 1485
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 21
-newline$ -- 123
-num.names$ -- 24
-pop$ -- 75
+int.to.str$ -- 26
+missing$ -- 23
+newline$ -- 133
+num.names$ -- 26
+pop$ -- 77
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 158
+skip$ -- 161
 stack$ -- 0
-substring$ -- 430
-swap$ -- 96
+substring$ -- 480
+swap$ -- 98
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 60
-width$ -- 26
-write$ -- 265
-(There were 5 warnings)
+while$ -- 66
+width$ -- 28
+write$ -- 287
+(There were 3 warnings)
