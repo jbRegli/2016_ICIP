@@ -99,11 +99,10 @@ Nick Kingsbury,
 \newblock {\em Applied and computational harmonic analysis}, vol. 10, no. 3,
   pp. 234--253, 2001.
 
-\bibitem{bruna2013invariant}
-Joan Bruna and St{\'e}phane Mallat,
-\newblock ``Invariant scattering convolution networks,''
-\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
-  on}, vol. 35, no. 8, pp. 1872--1886, 2013.
+\bibitem{bruna2013scattering}
+Joan Bruna,
+\newblock {\em Scattering representations for recognition},
+\newblock Ph.D. thesis, Ecole Polytechnique X, 2013.
 
 \bibitem{grabner2006fast}
 Michael Grabner, Helmut Grabner, and Horst Bischof,
@@ -125,18 +124,6 @@ Edouard Oyallon and St{\'e}phane Mallat,
 Joakim And{\'e}n and St{\'e}phane Mallat,
 \newblock ``Multiscale scattering for audio classification.,''
 \newblock in {\em ISMIR}, 2011, pp. 657--662.
-
-\bibitem{bruna2013scattering}
-Joan Bruna,
-\newblock {\em Scattering representations for recognition},
-\newblock Ph.D. thesis, Ecole Polytechnique X, 2013.
-
-\bibitem{durand2004computational}
-Jean-Baptiste Durand, Paulo Goncalves, and Yann Gu{\'e}don,
-\newblock ``Computational methods for hidden markov tree models-an application
-  to wavelet trees,''
-\newblock {\em Signal Processing, IEEE Transactions on}, vol. 52, no. 9, pp.
-  2551--2560, 2004.
 
 \bibitem{durand2001statistical}
 Jean-Baptiste Durand and Paulo Gon{\c{c}}alves,
