@@ -304,21 +304,21 @@
         \cline{3-6}
                 & & SCHMT & SCN+SVM & SCHMT & SCN+SVM \\
         \hline
-        \multirow{2}{0pt}{$2$}  & ($20$)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$ \\
+        \multirow{2}{0pt}{$2$}  & ($20$)  & $29.7\%$  & $\mathbf{32.0}\%$ & $28.9\%$  & $\mathbf{32.2}\%$  \\
         \cdashline{3-6}
-                                & (Full)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$  \\
+                                & (Full)  & $\mathbf{30.1}\%$  & $26.1\%$ & $\mathbf{29.1}\%$  & $25.6\%$  \\
         \hline
-        \multirow{2}{0pt}{$5$}  & ($20$)  & $45.0\%$  & $\mathbf{56.5\%}$ & $40.0\%$   & $40.0\%$ \\
+        \multirow{2}{0pt}{$5$}  & ($20$)  & $45.0\%$  & $\mathbf{56.5\%}$ & $35.1\%$  & $\mathbf{46.5\%}$ \\
         \cdashline{3-6}
-                                & (Full)  & $\mathbf{45.5\%}$ & $43.2\%$  & $40.0\%$   & $40.0\%$  \\
+                                & (Full)  & $\mathbf{45.5\%}$ & $43.2\%$  & $\mathbf{35.5\%}$ & $33.2\%$  \\
         \hline
-        \multirow{2}{0pt}{$10$} & ($20$)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$ \\
+        \multirow{2}{0pt}{$10$} & ($20$)  & $51.3\%$  & $\mathbf{64.8\%}$  & $49.1\%$   & $\mathbf{57.7\%}$ \\
         \cdashline{3-6}
-                                & (Full)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$  \\
+                                & (Full)  & $51.2\%$  & $\mathbf{61.4\%}$  & $49.4\%$   & $\mathbf{55.3\%}$  \\
         \hline
-        \multirow{2}{0pt}{$20$} & ($20$)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$ \\
+        \multirow{2}{0pt}{$20$} & ($20$)  & $50.0\%$  & $\mathbf{82.3}\%$  & $48.3\%$   & $\mathbf{78.0\%}$ \\
         \cdashline{3-6}
-                                & (Full)  & $30.0\%$  & $40.0\%$  & $40.0\%$   & $40.0\%$  \\
+                                & (Full)  & $50.0\%$  & $\mathbf{79.8\%}$  & $48.7\%$   & $\mathbf{76.1\%}$  \\
         
         \hline
       \end{tabular}
@@ -327,7 +327,7 @@
       \vspace{-15pt}
     \end{figure}
 		
-		When the number of training points is extremely limited ---\ie $2$ or $5$--- SVM can reach acceptable score on a small testset. However the model learned has poor generalization's properties and highly decreases in performance when the testset scales up. As opposed to this, SCHMT displays better generalization as its score remains almost constant while increasing the number of test samples. Finally it outperforms SVMs on large testset. As expected, when the number of training samples grow large enough ---\ie $10$ and onward--- for the SVMs, SCN+SVMs reach better maximum classification score on both the small and the large testset.
+		When the number of training points is extremely limited ---\ie $2$ or $5$--- SVM can reach acceptable score on a small testset. However the model learned has very poor generalization's properties and highly decreases in performance when the testset is scaled up. As opposed to this, SCHMT displays better generalization as its score remains almost constant while increasing the number of test samples. Finally it outperforms SVMs on large testset. As expected, when the number of training samples grow large enough ---\ie $10$ and onward--- for the SVMs, SCN+SVMs reach better maximum classification score on both the small and the large testset.
 		%TODO: emphasis the gfact that SCHMT beats SVMs in term of performance on large testsets.
 		
 		We can also notice that EM algorithm performances are undermined by convergence to local minima issues~\cite{moon1996expectation}. This sometime yields poor learning quality for the SCHMT. However when convergence occurs correctly SCHMTs has better generalization performances than the best SVMs.
