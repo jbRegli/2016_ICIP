@@ -1,54 +1,51 @@
 \begin{thebibliography}{10}
 
 \bibitem{salakhutdinov2009deep}
-Ruslan Salakhutdinov and Geoffrey~E Hinton,
+R.~Salakhutdinov and G.E. Hinton,
 \newblock ``Deep boltzmann machines,''
 \newblock in {\em International Conference on Artificial Intelligence and
   Statistics}, 2009, pp. 448--455.
 
 \bibitem{vincent2010stacked}
-Pascal Vincent, Hugo Larochelle, Isabelle Lajoie, Yoshua Bengio, and
-  Pierre-Antoine Manzagol,
+P.~Vincent, H.~Larochelle, I.~Lajoie, Y.~Bengio, and P.A. Manzagol,
 \newblock ``Stacked denoising autoencoders: Learning useful representations in
   a deep network with a local denoising criterion,''
 \newblock {\em The Journal of Machine Learning Research}, vol. 11, pp.
   3371--3408, 2010.
 
 \bibitem{lecun1995convolutional}
-Yann LeCun and Yoshua Bengio,
+Y.~LeCun and Y.~Bengio,
 \newblock ``Convolutional networks for images, speech, and time series,''
 \newblock {\em The handbook of brain theory and neural networks}, vol. 3361,
   no. 10, 1995.
 
 \bibitem{krizhevsky2012imagenet}
-Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton,
+A.~Krizhevsky, I.~Sutskever, and G.E. Hinton,
 \newblock ``Imagenet classification with deep convolutional neural networks,''
 \newblock in {\em Advances in neural information processing systems}, 2012, pp.
   1097--1105.
 
 \bibitem{hinton2012improving}
-Geoffrey~E Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and
-  Ruslan~R Salakhutdinov,
+G.E. Hinton, N.~Srivastava, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
 \newblock ``Improving neural networks by preventing co-adaptation of feature
   detectors,''
 \newblock {\em arXiv preprint arXiv:1207.0580}, 2012.
 
 \bibitem{huval2015empirical}
-Brody Huval, Tao Wang, Sameep Tandon, Jeff Kiske, Will Song, Joel
-  Pazhayampallil, Mykhaylo Andriluka, Royce Cheng-Yue, Fernando Mujica, Adam
-  Coates, et~al.,
+B.~Huval, T.~Wang, S.~Tandon, J.~Kiske, W.~Song, J.~Pazhayampallil,
+  M.~Andriluka, R.~Cheng-Yue, F.~Mujica, A.~Coates, et~al.,
 \newblock ``An empirical evaluation of deep learning on highway driving,''
 \newblock {\em arXiv preprint arXiv:1504.01716}, 2015.
 
 \bibitem{glorot2010understanding}
-Xavier Glorot and Yoshua Bengio,
+X.~Glorot and Y.~Bengio,
 \newblock ``Understanding the difficulty of training deep feedforward neural
   networks,''
 \newblock in {\em International conference on artificial intelligence and
   statistics}, 2010, pp. 249--256.
 
 \bibitem{hsiang2001embedded}
-Shih-Ta Hsiang and John~W Woods,
+S.T. Hsiang and J.W. Woods,
 \newblock ``Embedded video coding using invertible motion compensated 3-d
   subband/wavelet filter bank,''
 \newblock {\em Signal Processing: Image Communication}, vol. 16, no. 8, pp.
@@ -61,103 +58,103 @@ S.~Mallat,
   10, pp. 1331--1398, Oct. 2012.
 
 \bibitem{bruna2010classification}
-Joan Bruna and St{\'e}phane Mallat,
+J.~Bruna and S.~Mallat,
 \newblock ``Classification with scattering operators,''
 \newblock {\em arXiv preprint arXiv:1011.3023}, 2010.
 
 \bibitem{sifre2013rotation}
-Laurent Sifre and St{\'e}phane Mallat,
+L.~Sifre and S.~Mallat,
 \newblock ``Rotation, scaling and deformation invariant scattering for texture
   discrimination,''
 \newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2013 IEEE
   Conference on}. 2013, pp. 1233--1240, IEEE.
 
 \bibitem{fei2006one}
-Li~Fei-Fei, Rob Fergus, and Pietro Perona,
+L.~Fei-Fei, R.~Fergus, and P.~Perona,
 \newblock ``One-shot learning of object categories,''
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, vol. 28, no. 4, pp. 594--611, 2006.
 
 \bibitem{jordan2002discriminative}
-A~Jordan,
+A.~Jordan,
 \newblock ``On discriminative vs. generative classifiers: A comparison of
   logistic regression and naive bayes,''
 \newblock {\em Advances in neural information processing systems}, vol. 14, pp.
   841, 2002.
 
 \bibitem{crouse1998wavelet}
-Matthew~S Crouse, Robert~D Nowak, and Richard~G Baraniuk,
+M.S. Crouse, R.D. Nowak, and R.G. Baraniuk,
 \newblock ``Wavelet-based statistical signal processing using hidden markov
   models,''
 \newblock {\em Signal Processing, IEEE Transactions on}, vol. 46, no. 4, pp.
   886--902, 1998.
 
 \bibitem{kingsbury2001complex}
-Nick Kingsbury,
+N.~Kingsbury,
 \newblock ``Complex wavelets for shift invariant analysis and filtering of
   signals,''
 \newblock {\em Applied and computational harmonic analysis}, vol. 10, no. 3,
   pp. 234--253, 2001.
 
-\bibitem{bruna2013scattering}
-Joan Bruna,
-\newblock {\em Scattering representations for recognition},
-\newblock Ph.D. thesis, Ecole Polytechnique X, 2013.
-
-\bibitem{grabner2006fast}
-Michael Grabner, Helmut Grabner, and Horst Bischof,
-\newblock ``Fast approximated sift,''
-\newblock in {\em Computer Vision--ACCV 2006}, pp. 918--927. Springer, 2006.
-
-\bibitem{winder2009picking}
-Simon Winder, Gang Hua, and Michael Brown,
-\newblock ``Picking the best daisy,''
-\newblock in {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
-  IEEE Conference on}. 2009, pp. 178--185, IEEE.
-
-\bibitem{oyallon2014deep}
-Edouard Oyallon and St{\'e}phane Mallat,
-\newblock ``Deep roto-translation scattering for object classification,''
-\newblock {\em arXiv preprint arXiv:1412.8659}, 2014.
-
-\bibitem{anden2011multiscale}
-Joakim And{\'e}n and St{\'e}phane Mallat,
-\newblock ``Multiscale scattering for audio classification.,''
-\newblock in {\em ISMIR}, 2011, pp. 657--662.
-
 \bibitem{durand2004computational}
-Jean-Baptiste Durand, Paulo Goncalves, and Yann Gu{\'e}don,
+J.B. Durand, P.~Goncalves, and Y.~Gu{\'e}don,
 \newblock ``Computational methods for hidden markov tree models-an application
   to wavelet trees,''
 \newblock {\em Signal Processing, IEEE Transactions on}, vol. 52, no. 9, pp.
   2551--2560, 2004.
 
+\bibitem{bruna2013scattering}
+J.~Bruna,
+\newblock {\em Scattering representations for recognition},
+\newblock Ph.D. thesis, Ecole Polytechnique X, 2013.
+
+\bibitem{grabner2006fast}
+M.~Grabner, H.~Grabner, and H.~Bischof,
+\newblock ``Fast approximated sift,''
+\newblock in {\em Computer Vision--ACCV 2006}, pp. 918--927. Springer, 2006.
+
+\bibitem{winder2009picking}
+S.~Winder, G.~Hua, and M.~Brown,
+\newblock ``Picking the best daisy,''
+\newblock in {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on}. 2009, pp. 178--185, IEEE.
+
+\bibitem{oyallon2014deep}
+E.~Oyallon and S.~Mallat,
+\newblock ``Deep roto-translation scattering for object classification,''
+\newblock {\em arXiv preprint arXiv:1412.8659}, 2014.
+
+\bibitem{anden2011multiscale}
+J.~And{\'e}n and S.~Mallat,
+\newblock ``Multiscale scattering for audio classification.,''
+\newblock in {\em ISMIR}, 2011, pp. 657--662.
+
 \bibitem{durand2001statistical}
-Jean-Baptiste Durand and Paulo Gon{\c{c}}alves,
+J.B. Durand and P.~Gon{\c{c}}alves,
 \newblock ``Statistical inference for hidden markov tree models and application
   to wavelet trees,''
 \newblock 2001.
 
 \bibitem{lecun2016web}
-Yann LeCun,
+Y.~LeCun,
 \newblock ``Personal webpage: Mnist,'' \url{http://yann.lecun.com/exdb/mnist/},
   2016,
 \newblock Accessed: 18-01-2016.
 
 \bibitem{moon1996expectation}
-Tood~K Moon,
+T.K. Moon,
 \newblock ``The expectation-maximization algorithm,''
 \newblock {\em Signal processing magazine, IEEE}, vol. 13, no. 6, pp. 47--60,
   1996.
 
 \bibitem{KTH2016web}
-Eric Hayman and Barbara Caputo,
+E.~Hayman and B.~Caputo,
 \newblock ``Personal webpage: Kth-tips dataset,''
   \url{http://www.nada.kth.se/cvap/databases/kth-tips/index.html}, 2016,
 \newblock Accessed: 18-01-2016.
 
 \bibitem{wainwright2008graphical}
-Martin~J Wainwright and Michael~I Jordan,
+M.J. Wainwright and M.I. Jordan,
 \newblock ``Graphical models, exponential families, and variational
   inference,''
 \newblock {\em Foundations and Trends{\textregistered} in Machine Learning},

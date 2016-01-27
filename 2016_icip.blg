@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 2016_icip.aux
 The style file: IEEEbib.bst
@@ -11,7 +11,7 @@ Database file #2: refs.bib
 Warning--empty journal in durand2001statistical
 You've used 26 entries,
             1838 wiz_defined-function locations,
-            613 strings with 8106 characters,
+            613 strings with 7845 characters,
 and the built_in function-call counts, 6484 in all, are:
 = -- 620
 > -- 247
