@@ -285,8 +285,7 @@
 \section{Classification results}
   \label{sec:Exps}
   \vspace{-5pt}
-  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples from two standard datasets. For both datasets and classification methods we
-  use a scattering transform with $M=3$ orders, $J=5$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
+  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples from two standard datasets. For both datasets and classification methods we use a scattering transform with $M=3$ orders, $J=5$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
   
   \vspace{-5pt}
   \subsection{MNIST}

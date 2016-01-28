@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: 2016_icip_end2.aux
+The style file: IEEEbib.bst
+Database file #1: strings.bib
+I was expecting a `,' or a `}'---line 96 of file strings.bib
+ :   
+ :   year=    "2011"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "lecun2016web" isn't style-file defined
+--line 157 of file strings.bib
+Warning--empty year in bruna2010classification
+Warning--empty journal in salakhutdinov2010one
+You've used 26 entries,
+            1838 wiz_defined-function locations,
+            612 strings with 7944 characters,
+and the built_in function-call counts, 6985 in all, are:
+= -- 677
+> -- 250
+< -- 9
++ -- 94
+- -- 68
+* -- 508
+:= -- 1025
+add.period$ -- 30
+call.type$ -- 26
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 28
+duplicate$ -- 325
+empty$ -- 679
+format.name$ -- 68
+if$ -- 1618
+int.to.chr$ -- 0
+int.to.str$ -- 26
+missing$ -- 23
+newline$ -- 133
+num.names$ -- 26
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 190
+stack$ -- 0
+substring$ -- 556
+swap$ -- 122
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 71
+width$ -- 28
+write$ -- 288
+(There was 1 error message)

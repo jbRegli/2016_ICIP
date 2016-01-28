@@ -60,7 +60,8 @@ S.~Mallat,
 \bibitem{bruna2010classification}
 J.~Bruna and S.~Mallat,
 \newblock ``Classification with scattering operators,''
-\newblock {\em arXiv preprint arXiv:1011.3023}, 2010.
+\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2011 IEEE
+  Conference on}, pp. 1561--1566.
 
 \bibitem{sifre2013rotation}
 L.~Sifre and S.~Mallat,
@@ -103,6 +104,12 @@ J.B. Durand, P.~Goncalves, and Y.~Gu{\'e}don,
 \newblock {\em Signal Processing, IEEE Transactions on}, vol. 52, no. 9, pp.
   2551--2560, 2004.
 
+\bibitem{lecun2016web}
+Y.~LeCun,
+\newblock ``Personal webpage: Mnist,'' \url{http://yann.lecun.com/exdb/mnist/},
+  2016,
+\newblock Accessed: 18-01-2016.
+
 \bibitem{bruna2013scattering}
 J.~Bruna,
 \newblock {\em Scattering representations for recognition},
@@ -116,13 +123,14 @@ M.~Grabner, H.~Grabner, and H.~Bischof,
 \bibitem{winder2009picking}
 S.~Winder, G.~Hua, and M.~Brown,
 \newblock ``Picking the best daisy,''
-\newblock in {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
-  IEEE Conference on}. 2009, pp. 178--185, IEEE.
+\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2009 IEEE
+  Conference on}. 2009, pp. 178--185, IEEE.
 
 \bibitem{oyallon2014deep}
 E.~Oyallon and S.~Mallat,
 \newblock ``Deep roto-translation scattering for object classification,''
-\newblock {\em arXiv preprint arXiv:1412.8659}, 2014.
+\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2015 IEEE
+  Conference on}. 2015, pp. 2865--2873, IEEE.
 
 \bibitem{anden2011multiscale}
 J.~And{\'e}n and S.~Mallat,
@@ -131,27 +139,21 @@ J.~And{\'e}n and S.~Mallat,
 
 \bibitem{durand2001statistical}
 J.B. Durand and P.~Gon{\c{c}}alves,
-\newblock ``Statistical inference for hidden markov tree models and application
-  to wavelet trees,''
-\newblock 2001.
+\newblock {\em Statistical inference for hidden Markov tree models and
+  application to wavelet trees},
+\newblock Ph.D. thesis, INRIA, 2001.
 
-\bibitem{lecun2016web}
-Y.~LeCun,
-\newblock ``Personal webpage: Mnist,'' \url{http://yann.lecun.com/exdb/mnist/},
-  2016,
-\newblock Accessed: 18-01-2016.
+\bibitem{salakhutdinov2010one}
+R.~Salakhutdinov, J.~Tenenbaum, and A.~Torralba,
+\newblock ``One-shot learning with a hierarchical nonparametric bayesian
+  model,''
+\newblock 2010.
 
 \bibitem{moon1996expectation}
 T.K. Moon,
 \newblock ``The expectation-maximization algorithm,''
 \newblock {\em Signal processing magazine, IEEE}, vol. 13, no. 6, pp. 47--60,
   1996.
-
-\bibitem{KTH2016web}
-E.~Hayman and B.~Caputo,
-\newblock ``Personal webpage: Kth-tips dataset,''
-  \url{http://www.nada.kth.se/cvap/databases/kth-tips/index.html}, 2016,
-\newblock Accessed: 18-01-2016.
 
 \bibitem{wainwright2008graphical}
 M.J. Wainwright and M.I. Jordan,

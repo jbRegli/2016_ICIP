@@ -1,7 +1,7 @@
 %% ====== INTRO ======
 % Deep boltzmann machines
 @inproceedings{salakhutdinov2009deep,
-  title=			"Deep boltzmann machines",
+  title=			"Deep Boltzmann machines",
   author=			"Salakhutdinov, R. and Hinton, G.E.",
   booktitle=	"International Conference on Artificial Intelligence and Statistics",
   pages=			"448--455",
@@ -48,7 +48,7 @@
 
 % CNN self driving car
 @article{huval2015empirical,
-  title=			"An Empirical Evaluation of Deep Learning on Highway Driving",
+  title=			"An Empirical evaluation of deep learning on highway driving",
   author=			"Huval, B. and Wang, T. and Tandon, S. and Kiske, J. and Song, W. and Pazhayampallil, J. and Andriluka, M. and Cheng-Yue, R. and Mujica, F. and Coates, A. and others",
   journal=		"arXiv preprint arXiv:1504.01716",
   year=				"2015"
@@ -88,11 +88,13 @@
 }
 
 % Scattering transform MNIST
-@article{bruna2010classification,
+@inproceedings{bruna2010classification,
   title=			"Classification with scattering operators",
   author=			"Bruna, J. and Mallat, S.",
-  journal=		"arXiv preprint arXiv:1011.3023",
-  year=				"2010"
+  booktitle=	"Computer Vision and Pattern Recognition (CVPR), 2011 IEEE Conference on",
+  pages=      "1561-1566"
+  year=				"2011"
+  publisher=  "IEEE"
 }
 
 % Scattering transform: Texture
@@ -119,7 +121,7 @@
 
 % Generative vs disc 2:
 @article{jordan2002discriminative,
-  title=			"On discriminative vs. generative classifiers: A comparison of logistic regression and naive bayes",
+  title=			"On discriminative vs. generative classifiers: A comparison of logistic regression and naive Bayes",
   author=			"Jordan, A.",
   journal=		"Advances in neural information processing systems",
   volume=			"14",
@@ -149,6 +151,15 @@
   pages=			"234--253",
   year=				"2001",
   publisher=	"Elsevier"
+}
+
+% MNIST
+@ONLINE{lecun2016web,
+  title =         "Personal webpage: MNIST",
+  author =        "LeCun, Y.",
+  year=           "2016",
+  howpublished =  "\url{http://yann.lecun.com/exdb/mnist/}",
+  note =          "Accessed: 18-01-2016"
 }
 
 %% ===== Scattering convolutional networks =====
@@ -187,18 +198,20 @@
 @inproceedings{winder2009picking,
   title=			"Picking the best daisy",
   author=			"Winder, S. and Hua, G. and Brown, M.",
-  booktitle=	"Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on",
+  booktitle=	"Computer Vision and Pattern Recognition (CVPR), 2009 IEEE Conference on",
   pages=			"178--185",
   year=				"2009",
   publisher=	"IEEE"
 }
 
 % SCN view as CNN
-@article{oyallon2014deep,
+@inproceedings{oyallon2014deep,
   title=			"Deep roto-translation scattering for object classification",
   author=			"Oyallon, E. and Mallat, S.",
-  journal=		"arXiv preprint arXiv:1412.8659",
-  year=				"2014"
+  booktitle=  "Computer Vision and Pattern Recognition (CVPR), 2015 IEEE Conference on",
+  pages=      "2865--2873",
+  year=				"2015",
+  publisher=  "IEEE"
 }
 
 % SCN best order
@@ -221,31 +234,23 @@
   number=			"9",
   pages=			"2551--2560",
   year=				"2004",
-  publisher=			"IEEE"
+  publisher=	"IEEE"
 }
 
 % HMT MAP
-@article{durand2001statistical,
+@phdthesis{durand2001statistical,
   title=			"Statistical inference for hidden Markov tree models and application to wavelet trees",
   author=			"Durand, J.B. and Gon{\c{c}}alves, P.",
+  school=     "INRIA",
   year=				"2001"
 }
 
 %% ===== EXPERIMENTS ======
-% MNIST
-@ONLINE{lecun2016web,
-	title =					"Personal webpage: MNIST",
-	author = 				"LeCun, Y.",
-	year=						"2016",
-	howpublished = 	"\url{http://yann.lecun.com/exdb/mnist/}",
-	note = 					"Accessed: 18-01-2016"
-}
-
 % One shot learning 2:
 @article{salakhutdinov2010one,
-  title={One-shot learning with a hierarchical nonparametric bayesian model},
-  author={Salakhutdinov, Ruslan and Tenenbaum, Josh and Torralba, Antonio},
-  year={2010}
+  title=      "One-shot learning with a hierarchical nonparametric Bayesian model",
+  author=     "Salakhutdinov, R. and Tenenbaum, J. and Torralba, A.",
+  year=       "2010"
 }
 
 % EM cv issues
@@ -273,12 +278,12 @@ http://www.nada.kth.se/cvap/databases/kth-tips/credits.html
 %% ===== CONCLUSION =====
 % Variational HMM:
 @article{wainwright2008graphical,
-  title="Graphical models, exponential families, and variational inference",
-  author="Wainwright, M.J. and Jordan, M.I.",
-  journal="Foundations and Trends{\textregistered} in Machine Learning",
-  volume="1",
-  number="1-2",
-  pages="1--305",
-  year="2008",
-  publisher="Now Publishers Inc."
+  title=      "Graphical models, exponential families, and variational inference",
+  author=     "Wainwright, M.J. and Jordan, M.I.",
+  journal=    "Foundations and Trends{\textregistered} in Machine Learning",
+  volume=     "1",
+  number=     "1-2",
+  pages=      "1--305",
+  year=       "2008",
+  publisher=  "Now Publishers Inc."
 }
