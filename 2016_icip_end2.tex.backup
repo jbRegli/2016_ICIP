@@ -285,14 +285,34 @@
 \section{Classification results}
   \label{sec:Exps}
   \vspace{-5pt}
-  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples from two standard datasets. For both datasets and classification methods we use a scattering transform with $M=3$ orders, $J=5$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
+  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples by performing two experiments on the digit classification dataset MNIST~\cite{lecun2016web}. The MNIST dataset contains $60000$ training and $10000$ test images of ten handwritten digits (zero to nine), with $28\times28$ pixels.
+  For both experiments we use a scattering transform with $M=3$ orders, $J=3$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
   
   \vspace{-5pt}
-  \subsection{MNIST}
+  \subsection{MNIST - 1 vs All}
 		\label{subsec:Exps/MNIST}
 		\vspace{-5pt}
-		We first test SCHMTs on the digit classification dataset MNIST~\cite{lecun2016web}. SCHMT and SCN+SVM are both trained on a limited number of training examples per class and tested on $200$ test
-  samples ($20$ per class) and on the full testset ($10000$ images). The best results for each models are displayed in Figure~\ref{tab:Exp results}.
+		In a similar fashion to~\cite{salakhutdinov2010one}, we first test SCHMT on a ``one vs all'' basis. However we propose this experiment with a more challenging setup. Indeed in~\cite{salakhutdinov2010one} they pretrain their model with $100$ samples from each class but one. They then provide only limited amount of training examples, say $N$, for this last class. Instead we propose a framework where all the classes have the same limited amount of training points $N$. Like~\cite{salakhutdinov2010one} we then test the models on $1000$ examples.
+		
+		Table~\ref{tab:Exp1 results} displays the results (accuracy and positive likelihood ratio) belonging to one class versus all the others for both SCHMTs and SCN+SVM. It also displays the averaged accuracy over the $10$ classes. Note that this experimental setup should be in favor of the SVM classifier since it is effectively provided with $9N$ training points for one class 
+		
+		\begin{figure}
+      \begin{center}
+        \begin{tabular}{ |c|c|c| } 
+          \hline
+          cell1 & cell2 & cell3 \\ 
+          cell4 & cell5 & cell6 \\ 
+          cell7 & cell8 & cell9 \\ 
+          \hline
+        \end{tabular}
+      \end{center}
+      \caption{Classification score on $200$ samples (top row) and on the full testset (bottom row) of MNIST and KTH-TIPS trained using only a limited number of training points per class}
+      \label{tab:Exp1 results}
+      \vspace{-15pt}
+    \end{figure}
+
+		
+		We first test SCHMTs on the  SCHMT and SCN+SVM are both trained on a limited number of training examples per class and tested on $200$ test samples ($20$ per class) and on the full testset ($10000$ images). The best results for each models are displayed in Figure~\ref{tab:Exp2 results}.
 
 		\begin{figure}
       \begin{tabular}{  |p{0.2cm}
@@ -325,7 +345,7 @@
         \hline
       \end{tabular}
       \caption{Classification score on $200$ samples (top row) and on the full testset (bottom row) of MNIST and KTH-TIPS trained using only a limited number of training points per class}
-      \label{tab:Exp results}
+      \label{tab:Exp2 results}
       \vspace{-15pt}
     \end{figure}
 		
@@ -343,7 +363,7 @@
 	\subsection{KTH Texture}
 		\label{subsec:Exps/KTH Texture}
 		\vspace{-5pt}
-		Further experiments were run on the KTH-TIPS texture dataset~\cite{KTH2016web}. Similar to the MNIST experiments, we perform classification using limited training examples for each of the $10$ classes and perform the testing on both $20$ and $155$ ---\ie rest of the dataset--- samples per class. SVM parameters are optimized using cross-validation. Results are displayed in Figure~\ref{tab:Exp results}.
+		Further experiments were run on the KTH-TIPS texture dataset~\cite{KTH2016web}. Similar to the MNIST experiments, we perform classification using limited training examples for each of the $10$ classes and perform the testing on both $20$ and $155$ ---\ie rest of the dataset--- samples per class. SVM parameters are optimized using cross-validation. Results are displayed in Figure~\ref{tab:Exp2 results}.
     
     This texture dataset is more challenging than MNIST since the intra-class variability is higher. However the consequences are limited thanks to the scattering transform invariance properties. Again SCHMT performs well when given few training examples. The generalization capacity of SCHMT is also good since we see no change in performance when testing it on the $1550$ remaining examples. 
 
