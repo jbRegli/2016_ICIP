@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.3.2}{Learning the tree parameters}{section.3}% 8
 \BOOKMARK [2][-]{subsection.3.3}{MAP classification}{section.3}% 9
 \BOOKMARK [1][-]{section.4}{Experiments}{}% 10
-\BOOKMARK [2][-]{subsection.4.1}{MNIST - ``1 vs All''}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.1}{MNIST - ``One vs All''}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.2}{MNIST - Full}{section.4}% 12
 \BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
 \BOOKMARK [1][-]{section.6}{References}{}% 14

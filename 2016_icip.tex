@@ -22,7 +22,7 @@
 
 % Title.
 % ------
-\title{SCATTERING CONVOLUTIONAL HIDDEN MARKOV TREE}
+\title{SCATTERING CONVOLUTIONAL HIDDEN MARKOV TREES}
 %
 % Single address.
 % ---------------
@@ -43,7 +43,7 @@
 \maketitle
 %
 \begin{abstract}
-  We here combine the rich, overcomplete signal representation afforded by the scattering transform together with a probabilistic graphical model which captures hierarchical dependencies between coefficients at different layers. The wavelet scattering network component results in a high-dimensional representation which is translation invariant and stable to deformations whilst preserving informative content. Such properties are achieved by cascading wavelet transform convolutions with non-linear modulus and averaging operators. The network structure and its distributions are described using a Hidden Markov Tree. This yields a generative model for high-dimensional inference and offers a means to perform various inference tasks such as prediction. Our proposed scattering convolutional hidden Markov tree displays promising results on classification tasks of complex images in the challenging case where the number of training examples is extremely small. 
+  We here combine the rich, overcomplete signal representation afforded by the scattering transform together with a probabilistic graphical model which captures hierarchical dependencies between coefficients at different layers. The wavelet scattering network result in a high-dimensional representation which is translation invariant and stable to deformations whilst preserving informative content. Such properties are achieved by cascading wavelet transform convolutions with non-linear modulus and averaging operators. The network structure and its distributions are described using a Hidden Markov Tree. This yields a generative model for high-dimensional inference and offers a means to perform various inference tasks such as prediction. Our proposed scattering convolutional hidden Markov tree displays promising results on classification tasks of complex images in the challenging case where the number of training examples is extremely small. 
 \end{abstract}
 %
 \begin{keywords}
@@ -53,24 +53,23 @@
 \section{Introduction}
   \label{sec:Intro}
   \vspace{-5pt}
-  The standard approach to classify high dimensional signals can be expressed as a two step process. First the data are projected in a feature space where the task at hand is simplified. Then prediction is done using a simple predictor in this new representational space. The mapping can either be hand-built ---\eg Fourier transform, wavelet transform--- or learned. In the last decade methods for learning the projection have drastically improved under the impulsion of the so called deep learning. Deep neural networks (often enriched by convolutional architecture) have been able to learn very effective representations for a given dataset and a given task~\cite{salakhutdinov2009deep, vincent2010stacked,
+  The standard approach to classify high dimensional signals can be expressed as a two step process. First the data are projected in a feature space where the task at hand is simplified. Then prediction is done using a simple predictor in this new representational space. The mapping can either be hand-built ---\eg Fourier transform, wavelet transform--- or learned. In the last decade methods for learning the projection have drastically improved under the impulsion of the so called deep learning. Deep neural networks ---often enriched by convolutional architecture--- have been able to learn very effective representations for a given dataset and a given task~\cite{salakhutdinov2009deep, vincent2010stacked,
   lecun1995convolutional}. Such method have achieved state of the art on many standard problems~\cite{krizhevsky2012imagenet, hinton2012improving} as well as real world applications~\cite{huval2015empirical}. 
 
-  However deep learning methods are only efficient when we have access to a vast quantity of training examples~\cite{glorot2010understanding}. But in some cases, such as in medical or defence applications for example, datapoints are rare or using an expert for hand-labelling them is either time-consuming, costly or subjective. Hence in situations where training examples are expensive to collect, learning has to be performed on smaller
-  datasets. In that case using a fixed, hand crafted set of filters seems to be one of the best solution~\cite{hsiang2001embedded}. Recently Mallat introduced the scattering transform~\cite{mallat2012gis}--- a fixed bank of wavelet filters used to generate data representation in a convolutional neural networks like architecture. This representational approach was used together with a support vector machine classifier and achieved close to state of the art performance on a number of standard datasets~\cite{bruna2010classification}. Moreover, it has been shown that this method performs very well on a relatively smaller numbers of training examples ~\cite{sifre2013rotation} ---\ie around $1000$ training samples.
+  However deep learning methods are only efficient when we have access to a vast quantity of training examples~\cite{glorot2010understanding}. But in some cases, such as in medical or defence applications for example, datapoints are rare or using an expert for hand-labelling them is time-consuming, costly or subjective. Hence in situations where training examples are expensive to collect, learning has to be performed on smaller
+  datasets. In that case using a fixed, hand crafted set of filters seems to be one of the best solution~\cite{hsiang2001embedded}. Recently Mallat introduced the scattering transform~\cite{mallat2012gis}--- a fixed bank of wavelet filters used to generate data representation in a convolutional neural networks like architecture. This representational approach was used together with a support vector machine classifier (SVM) and achieved close to state of the art performance on a number of standard datasets~\cite{bruna2010classification}. Moreover, it has been shown that this method performs very well on a relatively smaller numbers of training examples ~\cite{sifre2013rotation} ---\ie around $1000$ training samples.
 
-  When only a very small number of training examples are available one-shot learning~\cite{fei2006one} generative classification methods achieve significantly better results than their discriminative counterparts~\cite{jordan2002discriminative}. Generative probabilistic graphical models have been successfully constructed for various wavelet transforms; in particular, Hidden Markov trees have been used to model the wavelet to model the dependencies between coefficients~\cite{crouse1998wavelet, kingsbury2001complex, durand2004computational}.
+  When only a very small number of training samples are available one-shot learning~\cite{fei2006one} generative classification methods achieve significantly better results than discriminative models~\cite{jordan2002discriminative}, however they require pre-training. Generative probabilistic graphical models have been successfully constructed for various wavelet transforms; in particular, Hidden Markov trees have been used to model the dependencies between the wavelet coefficients~\cite{crouse1998wavelet, kingsbury2001complex, durand2004computational}.
   
   In a similar fashion, we propose to model Mallat's scattering convolutional network~\cite{bruna2010classification} using hidden Markov trees. This combines a recently proposed deterministic, analytically tractable transformation inspired by deep convolutional with a probabilistic graphical model. It creates a potentially powerful probabilistic tool to handle high-dimensional prediction problems. Unlike previous work on hidden Markov wavelet trees, the use of scattering transforms allow us to exploit their full range of invariances. However, it also compels us to adapt the HMT model to non-homogeneous, non-regular trees. In contrast to simply passing the raw scattering coefficients into a classifier, our proposed framework captures dependencies between different layers in a generative probabilistic model. Moreover, unlike standard classification, once
   trained our model can tackle not only prediction problems but also other inference tasks such as generation, sensitivity analysis, etc and can also outperform SVMs when only a very small number of training examples are available.
 
-  The remainder of this paper introduces the scattering convolutional hidden Markov tree and is organised as follow. In section~\ref{sec:SCN} we review the scattering transform and some of its properties. Section~\ref{sec:SCHMT} introduces the proposed Scattering Hidden Markov Tree (SCHMT). In Section~\ref{sec:Exps} we perform classification on a selection of standard datasets restricted
-  to only a few training samples. We draw conclusions in Section~\ref{sec:Conclusion}.
+  The remainder of this paper introduces the scattering convolutional hidden Markov tree and is organised as follow. In section~\ref{sec:SCN} we review the scattering transform and some of its properties. Section~\ref{sec:SCHMT} introduces the proposed Scattering Hidden Markov Tree (SCHMT). In Section~\ref{sec:Exps} we perform several classification experiments on MNIST~\cite{lecun2016web} restricted  to only a few training samples. We draw conclusions in Section~\ref{sec:Conclusion}.
   
 \section{Scattering networks}
   \label{sec:SCN}
   \vspace{-5pt}
-  Scattering convolutional networks (SCNs)~\cite{bruna2013scattering} are Convolutional Neural Networks (CNNs)~\cite{lecun1995convolutional} that use a fixed filter bank of wavelets. Filters can be hand-crafted to yield descriptors with various desired invariances~\cite{mallat2012gis}. For image classification tasks, one is interested in descriptors that are at least stable to deformations and invariant to translations. Although SCNs can produce a more complex set of invariances, we here focus attention to deformations and translations only.
+  Scattering convolutional networks (SCNs)~\cite{bruna2013scattering} are Convolutional Neural Networks (CNNs)~\cite{lecun1995convolutional} that use a fixed filter bank of wavelets. Filters can be hand-crafted to yield descriptors with various desired invariances~\cite{mallat2012gis}. For image classification tasks, one is interested in descriptors that are at least stable to deformations and invariant to translations. Although SCNs can produce a more complex set of invariances~\cite{sifre2013rotation, oyallon2014deep} , we here focus attention to deformations and translations only.
 
   \vspace{-5pt}
   \subsection{Scattering transform}
@@ -83,7 +82,7 @@
       \label{eq:multi-scale directional wavelet}
       \psi_{\lambda}(u) = \psi_{j,\theta}(u) = 2^{-2j} \psi(2^{-j}r_{\theta}p)
     \end{equation}
-    In the remainder of this paper we restrict attention to Morlet wavelets defined on $\Lambda = G \times \llbracket 0,J \rrbracket$ where $G$ is a finite group of rotations of cardinality $L$ and where the wavelet is taken at scale $J$, namely 
+    In the remainder of this paper we restrict attention to Morlet wavelets defined on $\Lambda = G \times \llbracket 0,J \rrbracket$ where $G$ is a finite group of rotations of cardinality $L$ and where the wavelet is taken at scale $J$, namely for a signal $\bfx$,
     \vspace{-5pt}
     \begin{equation}
       \label{eq:wavelet transform}
@@ -92,7 +91,7 @@
     \vspace{-15pt}
     
     Whilst the averaging part $\phi_{J}$ of the wavelet transform is invariant to translations, the high frequency part $\psi_{\lambda}$ is covariant to them~\cite{mallat2012gis}. Invariance within a
-    limited range inferior tp $2^{J}$ can be achieved by averaging the positive envelope with a smooth window,
+    limited range inferior to $2^{J}$ can be achieved by averaging the positive envelope with a smooth window,
     \vspace{-5pt}
     \begin{equation}
       \label{eq:Scattering transform}
@@ -100,7 +99,7 @@
     \end{equation}
     \vspace{-10pt}
     
-    Such non-linearised averaged wavelet coefficients are used in various form in computer vision (SIFT~\cite{grabner2006fast}, DAISY~\cite{winder2009picking}), but the scattering transform proposes a new non-linearity as well as a layer based architecture.
+    Non-linearised averaged wavelet coefficients are used in various form in computer vision (SIFT~\cite{grabner2006fast}, DAISY~\cite{winder2009picking}), but the scattering transform proposes a new non-linearity as well as a layer based architecture.
   
   \vspace{-5pt}
   \subsection{Scattering convolutional network}
@@ -115,23 +114,23 @@
       \label{eq:One step propagator}
     \end{equation}
     
-    A scattering transform can be interpreted as a CNN~\cite{oyallon2014deep} illustrated in Figure~\ref{fig:SCN 1} which propagates a signal $\bfx$ across multiple layers of the network and which outputs at each layer $m$ the scattering invariant coefficients $S[p_{m}]\bfx$ where $p_{m}=(\lambda_{1} \dots \lambda_{m})$ is a path of $m$ orientations and scales.
+    A scattering transform can be interpreted as a CNN~\cite{oyallon2014deep} illustrated in Figure~\ref{fig:SCN 1} which propagates a signal $\bfx$ across multiple layers of the network and which outputs at each layer $m$ the scattering invariant coefficients $S[p_{m}]\bfx$ where $p_{m}=(\lambda_{1} \dots \lambda_{m})$ are the paths of $m$ orientations and scales.
     
     \begin{figure}
       \begin{center}
         \includegraphics[width=3.3in, height=2in, keepaspectratio]{scatnet_crop.pdf}
-        \caption[Scattering convolution network.]{\centering  Scattering networks can be seen as neural networks iterating over wavelet  modulus  operators $\mcalU_{j}$. Each layer $m$ outputs the averaged  invariants $S[p_{m}]\bfx$ and covariant coefficients $U[p_{m+1}]\bfx$.}
+        \caption[Scattering convolution network.]{\centering  Scattering networks can be seen as neural networks iterating over wavelet  modulus  operators $\mcalU_{J}$. Each layer $m$ outputs the averaged  invariants $S[p_{m}]\bfx$ and covariant coefficients $U[p_{m+1}]\bfx$.}
         \label{fig:SCN 1}
         % TODO: Change it for something similar to Siffre rigid motion
       \end{center}
       \vspace{-15pt}
     \end{figure}
     
-    The scattering energy is mainly concentrated along frequency decreasing paths, \ie for which $\abs{\lambda_{k+1}} \leq \abs{\lambda_{k}}$~\cite{mallat2012gis}. The energy contained in the other paths is negligible and thus for applications only frequency decreasing paths are considered. Moreover there exist a path length $M > 0$ after which all longer paths can be neglected. For signal processing applications, this decay appears to be exponential. And for classification applications, paths of length $M = 3$, \ie two convolutions, provide the most interesting results~\cite{anden2011multiscale, bruna2010classification}.
+    The scattering energy is mainly concentrated along frequency decreasing paths, \ie for which $\abs{\lambda_{k+1}} \leq \abs{\lambda_{k}}$~\cite{mallat2012gis}. The energy contained in the other paths is negligible and thus for applications only frequency decreasing paths are considered. Moreover there exists a path length $M > 0$ after which all longer paths can be neglected. For signal processing applications, this decay appears to be exponential and for classification applications, paths of length $M = 3$, \ie two convolutions, provide the most interesting results~\cite{anden2011multiscale, bruna2010classification}.
       
     This restrictions yield a more convenient parametrization of a scattering network. Indeed its now completely defined by the mother wavelet $\phi$, the maximum path length considered $M$, the finest scale level considered $J$, and the number of orientation considered $L$.
       
-    Hence for a given set of parameters $(\psi, M,J,L)$, let $ST_{(\psi,M,J,L)}(\bfx)$ denote the unique frequency decreasing windowed scattering convolutional network with those parameters evaluated forsignal $\bfx$. Each node $i$ of this network generates a, possibly empty, set of of nodes of size $(j_{i}-1) \times L$ where $j_{i}$ is the scale of node $i$ and $L$ is the number of orientations considered and it has the architecture displayed by Figure~\ref{fig:SCN 2}.
+    Hence for a given set of parameters $(\psi, M,J,L)$, let $ST_{(\psi,M,J,L)}(\bfx)$ denote the unique frequency decreasing windowed scattering convolutional network with those parameters evaluated for signal $\bfx$. Each node $i$ of this network generates a, possibly empty, set of nodes $\{U_{(.)}, S_{(.)}\}$ of size $n_{i} = (j_{i}-1)L$ where $j_{i}$ is the scale of node $i$ and $L$ the number of orientations considered. SCN's architecture is displayed by Figure~\ref{fig:SCN 2}.
 
     \begin{figure}
       \begin{center}
@@ -161,7 +160,7 @@
   \subsection{Hidden Markov tree model}
     \label{subsec:SCHMT/HMT model}
     \vspace{-5pt}
-    The HMT models the marginal distribution of each real ST coefficient $S_i$ as a Gaussian mixture. To each $S_i$, we associate a discrete hidden state $H_i$ that takes on values in $\llbracket 1,K \rrbracket$ with probability mass function (pmf) $P(H_i)$. Conditioned on $H_i = k$, $S_i$ is Gaussian with mean $\mu_{i,k}$ and variance $\sigma_{i,k}$. Thus, its overall marginal PDF is given by $P(w_i) = \sum_{k=1}^{K} P(H_i = m)P(S_i| H_i=k)$ with $P(S_i|H_i=k) \sim \mcalN(\mu_{i,k}, \sigma_{i,k})$. While each scattering coefficient $S_i$ is conditionally gaussian given its state variable $H_i$, overall it has a non-Gaussian density. Finally the probability for the hidden node $H_{i}$ to be in a state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$. This yields $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
+    The HMT models the marginal distribution of each real scattering coefficient $S_i$ as a Gaussian mixture. To each $S_i$, we associate a discrete hidden state $H_i$ that takes on values in $\llbracket 1,K \rrbracket$ with probability mass function $P(H_i)$. Conditioned on $H_i = k$, $S_i$ is Gaussian with mean $\mu_{i,k}$ and variance $\sigma_{i,k}$. Thus, its overall marginal PDF is given by $P(w_i) = \sum_{k=1}^{K} P(H_i = k)P(S_i| H_i=k)$ with $P(S_i|H_i=k) \sim \mcalN(\mu_{i,k}, \sigma_{i,k})$. While each scattering coefficient $S_i$ is conditionally Gaussian given its state variable $H_i$, overall it has a non-Gaussian density. Finally the probability for the hidden node $H_{i}$ to be in state $k$ given its father's state $g$ is characterized by a transition probability such that $\epsilon_{i}^{(gk)} = P(H_{i}= k | H_{\rho(i)}=g)$. This yields $P(H_{i}=k) = \sum_{g=1}^{K} \epsilon_{i}^{(gk)} P(H_{\rho(i)}=g)$.
 
     Such a model is pictured in Figure~\ref{fig:SCHMT 1} and for a given scattering architecture ---\ie fixed $M$, $J$ and $L$--- the SCHMT model is fully parametrized by,
     \vspace{-5pt}
@@ -181,16 +180,16 @@
       \vspace{-15pt}
     \end{figure}
     
-    This model implies two assumptions on the scattering transform.  We firstly posit $K$-populations; i.e. that the scattering coefficients of a given signal can be described by $K$ clusters. This is a commonassumptions for standard wavelets~\cite{kingsbury2001complex} and it can hence be extended to the scattering transform. The SCHMT also assumes persistence in that the informative character of a
+    This model implies two assumptions on the scattering transform.  We firstly posit $K$-populations; i.e. that each scattering coefficient of a given signal can be described by $K$ clusters. This is a common assumption for standard wavelets~\cite{kingsbury2001complex} and it can hence be extended to the scattering transform. The SCHMT also assumes persistence in that the informative character of a
     coefficient is propagated across layers. This assumption is justified by the fact that scattering coefficients are highly correlated~\cite{oyallon2014deep}.
   
   \vspace{-5pt}
   \subsection{Learning the tree parameters}
     \label{subsec:SCHMT/Learning}    
     \vspace{-5pt}
-    The proposed SCHMT is trained using the smoothed version of the Expectation-Maximization (EM) algorithm for hidden Markov trees proposed by~\cite{durand2001statistical} and adapted to non-homogeneous and non-binary trees.
+    The proposed SCHMT is trained using the smoothed version of the Expectation-Maximization (EM) algorithm for hidden Markov trees proposed by Durand~\cite{durand2001statistical} and adapted to non-homogeneous and non-binary trees.
     
-    Let $\bar{\mcalS}_{i}= \bar{s}_{i}$ be the observed sub-tree rooted at node $i$. By convention $\bar{\mcalS}_{0}$ denotes the entire observed tree. The smoothed version of the E-step requires the computation of the conditional probability distributions $\xi_{i}(k) = P(H_{i}=k | \bar{\mcalS}_{i}= \bar{s}_{i})$ (smoothed probability) and $P(H_{i}=k, H_{\rho(i)}=g | \bar{\mcalS}_{i}= \bar{s}_{i})$ for each node $i \in \mcalT$ and states $k$ and $g$. This can be achieved through an upward-downward recursion displayed in Algorithm~\ref{algo:Smoothed upward} and~\ref{algo:Smoothed downward}. The output from the downward step are used in the M-step as shown in Algorithm~\ref{algo:Mstep}.
+    Let $\bar{\mcalS}_{i}= \bar{s}_{i}$ be the observed sub-tree rooted at node $i$. By convention $\bar{\mcalS}_{0}$ denotes the entire observed tree. The smoothed version of the E-step requires the computation of the conditional probability distributions $\xi_{i}(k) = P(H_{i}=k | \bar{\mcalS}_{i}= \bar{s}_{i})$ (smoothed probability) and $P(H_{i}=k, H_{\rho(i)}=g | \bar{\mcalS}_{i}= \bar{s}_{i})$ for each node $i$ of the tree $\mcalT$ and states $k$ and $g$. This can be achieved through an upward-downward recursion displayed in Algorithm~\ref{algo:Smoothed upward} and~\ref{algo:Smoothed downward}. The output from the downward step are used in the M-step as shown in Algorithm~\ref{algo:Mstep}.
     
     \vspace{-15pt}
     \setlength{\algomargin}{+4pt}
@@ -282,77 +281,94 @@
 
     In this context the MAP algorithm~\cite{durand2001statistical} aims to find the optimal hidden tree $\hat{\bar{h}}_{0}^{new}=(\hat{h}_{0}^{new}, \ldots , \hat{h}_{I-1}^{new})$ that maximizes the probability of this sequence given the model's parameters $P(\bar{\mcalH}_{0}= \hat{\bar{h}}_{0}^{new}|\mcalT^{new},\Theta_{c})$. The MAP framework also provides $\hat{P}$ the value of this maximum.
     
-\section{Classification results}
+\section{Experiments}
   \label{sec:Exps}
   \vspace{-5pt}
-  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples from two standard datasets. For both datasets and classification methods we use a scattering transform with $M=3$ orders, $J=5$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
+  We compare the performance of SCHMT to those of a SCN combined with an SVM (SCN+SVM) restricted to a small number of training examples by performing two experiments on the digit classification dataset MNIST~\cite{lecun2016web}. It contains $60000$ training examples and $10000$ test images of $10$ handwritten digits (zero to nine), with $28\times28$ pixels.
+  For both experiments we use a scattering transform with $M=3$ orders, $J=3$ scales, $L=3$ orientations and a Morlet mother wavelet. The hidden Markov tree has $K=2$ states and uses a mixture of Gaussian to describe the relationship between the scattering coefficients and the hidden states. For the SVM, the best parameters are selected by cross-validation.
   
   \vspace{-5pt}
-  \subsection{MNIST}
-		\label{subsec:Exps/MNIST}
+  \subsection{MNIST - ``One vs All''}
+		\label{subsec:Exps/MNIST - 1vsAll}
 		\vspace{-5pt}
-		We first test SCHMTs on the digit classification dataset MNIST~\cite{lecun2016web}. SCHMT and SCN+SVM are both trained on a limited number of training examples per class and tested on $200$ test
-  samples ($20$ per class) and on the full testset ($10000$ images). The best results for each models are displayed in Figure~\ref{tab:Exp results}.
-
-		\begin{figure}
-      \begin{tabular}{  |p{0.2cm}
-                         p{0.6cm}
+		In a similar fashion to~\cite{salakhutdinov2010one}, we first test SCHMT on a ``One vs All'' basis. However we propose this experiment with a more challenging setup. Indeed they pretrain their model with $100$ samples from each class but one. They then provide only limited amount of training examples, say $N$, for this last class. Instead we propose a framework where all the classes have the same limited amount of training points $N$. We then test the models on $1000$ examples.
+		
+		Table~\ref{tab:Exp1 results} displays the accuracy and the sensitivity for both SCHMTs and SCN+SVMs. With $N=5$ training examples, SVM is not able to discriminate the digit of interest and simply classify everything as ``All''. This yields a sensitivity of $0.0\%$ characteristic of an uninformative test. In the same condition, SCHMT is able to correctly discriminate the digit of interest and provides a very informative test --good sensitivity and accuracy. Some classes ---$4$ and $6$--- are more challenging than others due to their high intra-class variability.
+		
+    
+    %Note that this experimental setup should be in favor of the SVM classifier since it is effectively provided with $9N$ training points for one class. With this amount training samples,
+    \begin{figure}
+      \hspace{35pt}
+      \begin{tabular}{  |p{0.9cm}
+                         p{0.7cm}
                         |p{1.1cm}
-                        |p{1.5cm}
-                        !{\vrule width 2pt}p{1.1cm}
                         |p{1.5cm}|}
         \hline
-        \multicolumn{2}{|c|}{\multirow{2}{*}{\parbox[t]{1.2cm}{Training \\samples}}} & \multicolumn{2}{c!{\vrule width 2pt}}{MNIST} & \multicolumn{2}{c|}{KTH-TIPS}\\
-        \cline{3-6}
-                & & SCHMT & SCN+SVM & SCHMT & SCN+SVM \\
+        \multicolumn{2}{|c|}{\multirow{2}{*}{\parbox[t]{2cm}{1 vs All class}}} & \multicolumn{2}{c|}{MNIST}\\
+        \cline{3-4}
+                                      &   & SCHMT   & SCN+SVM \\
         \hline
-        \multirow{2}{0pt}{$2$}  & ($20$)  & $35.0\%$  & $\mathbf{51.5}\%$ & $28.9\%$  & $\mathbf{32.2}\%$  \\
-        \cdashline{3-6}
-                                & (Full)  & $\mathbf{28.6}\%$  & $18.7\%$ & $\mathbf{29.1}\%$  & $25.6\%$  \\
+        \multirow{2}{0pt}{$9$}        & (Acc) & $\mathbf{97.2\%}$ & $90.0\%$ \\
+        \cdashline{3-4}
+                                      & (Sen) & $\mathbf{94.0\%}$ & $0.0\%$ \\
+                                      %& (PTR)   & $\mathbf{3.8}$     & $0$   \\
         \hline
-        \multirow{2}{0pt}{$5$}  & ($20$)  & $50.0\%$  & $\mathbf{56.5\%}$ & $35.1\%$  & $\mathbf{46.5\%}$ \\
-        \cdashline{3-6}
-                                & (Full)  & $\mathbf{48.0\%}$ & $43.2\%$  & $\mathbf{35.5\%}$ & $33.2\%$  \\
+        \multirow{2}{0pt}{$6$}        & (Acc) & $\mathbf{94.1\%}$ & $90.0\%$ \\
+        \cdashline{3-4}
+                                      & (Sen) & $\mathbf{57.5\%}$ & $0.0\%$ \\
+                                      %&  (PTR) & $\mathbf{30.7}$    & $0$   \\
         \hline
-        \multirow{2}{0pt}{$10$} & ($20$)  & $51.3\%$  & $\mathbf{62.0\%}$  & $49.1\%$   & $\mathbf{57.7\%}$ \\
-        \cdashline{3-6}
-                                & (Full)  & $51.2\%$  & $\mathbf{49.9\%}$  & $49.4\%$   & $\mathbf{55.3\%}$  \\
-        \hline
-        \multirow{2}{0pt}{$20$} & ($20$)  & $50.0\%$  & $\mathbf{82.3}\%$  & $48.3\%$   & $\mathbf{78.0\%}$ \\
-        \cdashline{3-6}
-                                & (Full)  & $50.0\%$  & $\mathbf{79.8\%}$  & $48.7\%$   & $\mathbf{76.1\%}$  \\
-        
+        \multirow{2}{0pt}{Average}    & (Acc) & $\mathbf{93.9\%}$ & $90.0\%$ \\
+        \cdashline{3-4}
+                                      & (Sen) & $\mathbf{60.2\%}$ & $0.0\%$ \\
+                                      %& (PTR)   & $\mathbf{75.5}$    & $0$    \\
         \hline
       \end{tabular}
-      \caption{Classification score on $200$ samples (top row) and on the full testset (bottom row) of MNIST and KTH-TIPS trained using only a limited number of training points per class}
-      \label{tab:Exp results}
+      \caption{Accuracy and sensitivity on $1000$ samples of MNIST trained using only a $5$ of training points per class and tested on ``One vs All''.}
+      \label{tab:Exp1 results}
+      \vspace{-15pt}
+    \end{figure}
+
+  \vspace{-5pt}
+  \subsection{MNIST - Full}
+    \label{subsec:Exps/MNIST - Full}
+    \vspace{-5pt}
+		SCHMT and SCN+SVM are tested on the more complex problem of mutliclass labelling. SCHMT and SCN+SVM are both trained on a limited number of training examples per class and tested on the full testset.
+
+		\begin{figure}
+      \hspace{40pt}
+      \begin{tabular}{  |p{2.5cm}
+                        |p{1.5cm}
+                        |p{1.5cm}|}
+        \hline
+        \multirow{2}{*}{\parbox[t]{2.5cm}{Training samples \\ per class}} & \multicolumn{2}{c|}{MNIST}\\
+        \cline{2-3}
+                & SCHMT & SCN+SVM \\
+        \hline
+        $N = 2$     & $\mathbf{28.6}\%$  & $18.7\%$   \\
+        \hline
+        $N = 5$     & $\mathbf{48.0\%}$ & $43.2\%$  \\
+        \hline
+        $N = 10$    & $45.2\%$  & $\mathbf{49.9\%}$  \\       
+        \hline
+      \end{tabular}
+      \caption{Classification score on the complete testset of MNIST ($10000$ samples) trained using only a limited number $N$ of training points per class}
+      \label{tab:Exp2 results}
       \vspace{-15pt}
     \end{figure}
 		
-		When the number of training points is extremely limited ---\ie $2$ or $5$--- SVM can reach acceptable score on a small testset. However the model learned does not generalize well and suffers significant degradation in
-    performance when the test set is scaled up. In contrast the SCHMT displays better generalization as its score remains almost constant as the number of test samples are increased. Finally it outperforms SVMs on large testset. As expected, when the number of training samples grow large enough ---\ie $10$ and onward--- for the SVMs, SCN+SVMs reach better maximum classification score on both the small and the large testset.
-		%TODO: emphasis the gfact that SCHMT beats SVMs in term of performance on large testsets.
+    The best results for each models are displayed in Table~\ref{tab:Exp2 results}. SCHMT displays better generalization and prediction properties than SCN+SVM when trained on a very limited number of training points. For $N=2$ seen samples per class, SVM beats a random selector---\ie $10\%$--- by a small margin while SCHMT provides a near three folds improvement. With only $5$ training examples per class, SCHMT does close to five times better than random. As expected, when the number of training samples grow large enough ---\ie $10$ and more, SCN+SVM reaches better maximum classification score.
 		
-		We can also notice that EM algorithm performances are undermined by convergence to local minima issues~\cite{moon1996expectation}. This sometimes yields poor learning quality for the SCHMT. However when
-    convergence occurs correctly SCHMTs has better generalization performance than the best SVMs.
+		The drop in performance of SCHMT for $N=10$ training examples is explained by the fact that the EM algorithm is undermined by convergence to local minima issues~\cite{moon1996expectation} yielding sometimes to poor learning quality for SCHMTs. However when a good minima is found, SCHMTs has acceptable generalization performance. 
     
-    While confirming the superiority of a generative model in terms of generalizability for limited number of training points, this experiment also highlights a
-    potential weakness of the SCHMT in that sometimes convergence problems occur. However, in the main, SCHMT provides good classification score for such a low number of training examples.
+    While confirming the superiority of our model in terms of generalizability for limited number of training points, this experiment also highlights a potential weakness of it in that sometimes convergence problems occur. However, in the main, SCHMT provides good classification score for such a low number of training examples.
 		
-	\vspace{-5pt}
-	\subsection{KTH Texture}
-		\label{subsec:Exps/KTH Texture}
-		\vspace{-5pt}
-		Further experiments were run on the KTH-TIPS texture dataset~\cite{KTH2016web}. Similar to the MNIST experiments, we perform classification using limited training examples for each of the $10$ classes and perform the testing on both $20$ and $155$ ---\ie rest of the dataset--- samples per class. SVM parameters are optimized using cross-validation. Results are displayed in Figure~\ref{tab:Exp results}.
-    
-    This texture dataset is more challenging than MNIST since the intra-class variability is higher. However the consequences are limited thanks to the scattering transform invariance properties. Again SCHMT performs well when given few training examples. The generalization capacity of SCHMT is also good since we see no change in performance when testing it on the $1550$ remaining examples. 
-
 \section{Conclusion}
   \label{sec:Conclusion}
   \vspace{-5pt}
-  An SCHMT framework has been proposed which comprises a scattering transform and a hidden Markov tree model.  The scattering transform projects the data into a representational space of even higher dimensionality but of reduced volume along the invariants in the data. Then a probabilistic graphical model ---hidden Markov tree--- was used to fit a generative model to the distribution of the representation of the data.  As such, the proposed model takes advantage of the way in which the scattering transform introduces invariances into the representation but also the manner in which hidden Markov models capture dependencies between coefficients.  Experiments have demonstrated that the modelled distribution can be used to perform efficient classification tasks even with small training sizes. Even though we only here consider classification, a generative model is much more versatile than a simple ---yet efficient--- discriminative counterpart. Because they model the full distribution of the data they can express more complex relationships between the observed and the unknown variables than simple discrimination. 
+  A SCHMT framework has been proposed which comprises a scattering transform and a hidden Markov tree model.  The scattering transform projects the data into a representational space of even higher dimensionality but of reduced volume along the invariants in the data. Then a probabilistic graphical model ---hidden Markov tree--- was used to fit a generative model to the distribution of the representation of the data.  As such, the proposed model takes advantage of the way in which the scattering transform introduces invariances into the representation but also the manner in which hidden Markov models capture dependencies between coefficients.  Experiments have demonstrated that the modelled distribution can be used to perform efficient classification tasks even with small training sizes. Even though we only here consider classification, a generative model is much more versatile than a simple ---yet efficient--- discriminative one. Because they model the full distribution of the data they can express more complex relationships between the observed and the unknown variables than simple discrimination. 
   
-  To enhance SCHMT and especially the chance of converging toward a good minima during the EM learning, further work will include development of variational methodology learn the model parameters~\cite{wainwright2008graphical}.
+  To enhance SCHMT and especially the chance of converging toward a good minima during the EM learning, further work will include development of variational methodology to learn the model parameters~\cite{wainwright2008graphical}.
 
   
 % To start a new column (but not a new page) and help balance the last-page
@@ -375,7 +391,7 @@
 % style file from IEEE produces unsorted bibliography list.
 % -------------------------------------------------------------------------
 \bibliographystyle{IEEEbib}
-\bibliography{strings,refs}
+\bibliography{strings}
 
 % \bibliography{bib_icip}
 

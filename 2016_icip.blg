@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: 2016_icip_end2.aux
+The top-level auxiliary file: 2016_icip.aux
 The style file: IEEEbib.bst
 Database file #1: strings.bib
 I was expecting a `,' or a `}'---line 96 of file strings.bib
@@ -14,7 +14,7 @@ Warning--empty year in bruna2010classification
 Warning--empty journal in salakhutdinov2010one
 You've used 26 entries,
             1838 wiz_defined-function locations,
-            612 strings with 7944 characters,
+            612 strings with 7934 characters,
 and the built_in function-call counts, 6985 in all, are:
 = -- 677
 > -- 250

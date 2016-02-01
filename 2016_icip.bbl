@@ -115,6 +115,12 @@ J.~Bruna,
 \newblock {\em Scattering representations for recognition},
 \newblock Ph.D. thesis, Ecole Polytechnique X, 2013.
 
+\bibitem{oyallon2014deep}
+E.~Oyallon and S.~Mallat,
+\newblock ``Deep roto-translation scattering for object classification,''
+\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2015 IEEE
+  Conference on}. 2015, pp. 2865--2873, IEEE.
+
 \bibitem{grabner2006fast}
 M.~Grabner, H.~Grabner, and H.~Bischof,
 \newblock ``Fast approximated sift,''
@@ -125,12 +131,6 @@ S.~Winder, G.~Hua, and M.~Brown,
 \newblock ``Picking the best daisy,''
 \newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2009 IEEE
   Conference on}. 2009, pp. 178--185, IEEE.
-
-\bibitem{oyallon2014deep}
-E.~Oyallon and S.~Mallat,
-\newblock ``Deep roto-translation scattering for object classification,''
-\newblock in {\em Computer Vision and Pattern Recognition (CVPR), 2015 IEEE
-  Conference on}. 2015, pp. 2865--2873, IEEE.
 
 \bibitem{anden2011multiscale}
 J.~And{\'e}n and S.~Mallat,

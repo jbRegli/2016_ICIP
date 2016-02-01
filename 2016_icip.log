@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.16)  28 JAN 2016 17:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.16)  29 JAN 2016 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**2016_icip_end2.tex
-(./2016_icip_end2.tex
+**2016_icip.tex
+(./2016_icip.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1106,8 +1106,8 @@ File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 \c@ques=\count166
 \c@assumption=\count167
 )
-(./spconf.sty) (./2016_icip_end2.aux)
-\openout1 = `2016_icip_end2.aux'.
+(./spconf.sty) (./2016_icip.aux)
+\openout1 = `2016_icip.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
@@ -1204,9 +1204,9 @@ LaTeX Info: Redefining \ref on input line 40.
 LaTeX Info: Redefining \pageref on input line 40.
 LaTeX Info: Redefining \nameref on input line 40.
 
-(./2016_icip_end2.out) (./2016_icip_end2.out)
+(./2016_icip.out) (./2016_icip.out)
 \@outlinefile=\write4
-\openout4 = `2016_icip_end2.out'.
+\openout4 = `2016_icip.out'.
 
 LaTeX Info: Redefining \microtypecontext on input line 40.
 Package microtype Info: Generating PDF output.
@@ -1274,21 +1274,21 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 89.
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-<Images/scatnet_crop.pdf, id=119, 214.8025pt x 51.19125pt>
+<Images/scatnet_crop.pdf, id=121, 214.8025pt x 51.19125pt>
 File: Images/scatnet_crop.pdf Graphic file (type pdf)
 
 <use Images/scatnet_crop.pdf>
 Package pdftex.def Info: Images/scatnet_crop.pdf used on input line 121.
 (pdftex.def)             Requested size: 238.49586pt x 56.83778pt.
 
-<Images/ST_freqDec_crop.pdf, id=124, 504.88625pt x 145.54375pt>
+<Images/ST_freqDec_crop.pdf, id=126, 504.88625pt x 145.54375pt>
 File: Images/ST_freqDec_crop.pdf Graphic file (type pdf)
 
 <use Images/ST_freqDec_crop.pdf>
 Package pdftex.def Info: Images/ST_freqDec_crop.pdf used on input line 137.
 (pdftex.def)             Requested size: 238.49066pt x 68.74979pt.
  [2 <./Images/scatnet_crop.pdf> <./Images/ST_freqDec_crop.pdf>] <Images/scat_HM
-T_crop.pdf, id=222, 516.93124pt x 151.56625pt>
+T_crop.pdf, id=224, 516.93124pt x 151.56625pt>
 File: Images/scat_HMT_crop.pdf Graphic file (type pdf)
 
 <use Images/scat_HMT_crop.pdf>
@@ -1319,39 +1319,53 @@ Overfull \hbox (5.00002pt too wide) in paragraph at lines 311--311
  []
 
 
-Overfull \hbox (1.73747pt too wide) in paragraph at lines 313--313
-[]|\T1/ptm/m/n/10 (-20) (PTR)| 
+Overfull \hbox (2.38771pt too wide) in paragraph at lines 311--311
+[]|\T1/ptm/m/n/10 (-20) (Acc)| 
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 315--315
+Overfull \hbox (1.30972pt too wide) in paragraph at lines 313--313
+[]|\T1/ptm/m/n/10 (-20) (Sen)| 
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 316--316
 []|$\OT1/cmr/m/n/10 6$|  
  []
 
 
-Overfull \hbox (1.73747pt too wide) in paragraph at lines 317--317
-[]|\T1/ptm/m/n/10 (-20) (PTR)| 
+Overfull \hbox (2.38771pt too wide) in paragraph at lines 316--316
+[]|\T1/ptm/m/n/10 (-20) (Acc)| 
  []
 
 
-Overfull \hbox (22.31436pt too wide) in paragraph at lines 319--319
-[]|\T1/ptm/m/n/10 (-20) Mean|  
+Overfull \hbox (1.30972pt too wide) in paragraph at lines 318--318
+[]|\T1/ptm/m/n/10 (-20) (Sen)| 
  []
 
 
-Overfull \hbox (1.73747pt too wide) in paragraph at lines 321--321
-[]|\T1/ptm/m/n/10 (-20) (PTR)| 
+Overfull \hbox (32.30241pt too wide) in paragraph at lines 321--321
+[]|\T1/ptm/m/n/10 (-20) Average|  
  []
 
 
-Overfull \hbox (3.14522pt too wide) in paragraph at lines 345--346
+Overfull \hbox (2.38771pt too wide) in paragraph at lines 321--321
+[]|\T1/ptm/m/n/10 (-20) (Acc)| 
+ []
+
+
+Overfull \hbox (1.30972pt too wide) in paragraph at lines 323--323
+[]|\T1/ptm/m/n/10 (-20) (Sen)| 
+ []
+
+
+Overfull \hbox (3.14522pt too wide) in paragraph at lines 346--347
 []|\T1/ptm/m/n/10 (-20) SCN+SVM| 
  []
 
-[4] (./2016_icip_end2.bbl
+[4] (./2016_icip.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 109.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Package microtype Info: Loading generic settings for font family
@@ -1373,21 +1387,21 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
  [5]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
 
-(./2016_icip_end2.aux)
+(./2016_icip.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
-Package rerunfilecheck Info: File `2016_icip_end2.out' has not changed.
-(rerunfilecheck)             Checksum: FF5FE3B1036C7C35D88BEEAAC4573EDC;891.
+Package rerunfilecheck Info: File `2016_icip.out' has not changed.
+(rerunfilecheck)             Checksum: FED0CEB52BF017A0A47F2D0DE6709770;893.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
  ) 
 Here is how much of TeX's memory you used:
- 22765 strings out of 493304
- 382988 string characters out of 6139871
- 536579 words of memory out of 5000000
+ 22753 strings out of 493304
+ 382808 string characters out of 6139871
+ 536537 words of memory out of 5000000
  25430 multiletter control sequences out of 15000+600000
- 62698 words of font info for 222 fonts, out of 8000000 for 9000
+ 62178 words of font info for 214 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,15n,57p,1138b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,15n,57p,1133b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1417,10 +1431,10 @@ e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on 2016_icip_end2.pdf (5 pages, 474274 bytes).
+Output written on 2016_icip.pdf (5 pages, 474727 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 351 compressed objects within 4 object streams
+ 420 PDF objects out of 1000 (max. 8388607)
+ 353 compressed objects within 4 object streams
  66 named destinations out of 1000 (max. 500000)
  34444 words of extra memory for PDF output out of 35830 (max. 10000000)
 
